@@ -4,18 +4,10 @@
 
 {% block content %}
     
-    {% if data %}
-        <img src="{{ data.profile_image_url }}"
-             title="{{ data.screen_name }}"
-             alt="{{ data.screen_name }}" />
-
-        <div>
-            <a href="{% url twitterauth:logout %}">Logout</a>
-        </div>
+    {% if user.is_authenticated %}
+        <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
     {% else %}
-        <div>
-            <a href="{% url twitterauth:login %}">Login</a>
-        </div>
+        <p><a href="{% url twitterauth:login %}">Login</a></p>
     {% endif %}
     
     <div>

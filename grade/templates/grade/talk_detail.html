@@ -28,7 +28,12 @@
                 <legend>Ouvintes</legend>
                 <ul>
                     {% for listener in talk.listeners.all %}
-                        <li>{{ listener.username }}</li>
+                        <p>
+                        <img src="http://api.twitter.com/1/users/profile_image/?screen_name={{ listener.username }}&size=bigger"
+                             title="{{ listener.username }}"
+                             alt="{{ listener.username }}" /><br>
+                        {{ listener.username }}
+                        </p>
                     {% empty %}
                     Nenhum ouvinte.
                     {% endfor %}

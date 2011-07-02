@@ -9,9 +9,6 @@ from django.contrib.auth.decorators import login_required
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
 
-# twitter
-from twitterauth.views import twitter_data
-
 
 class TalkDetailView(DetailView):
     """ View utilizada para mostrar a palestra """
@@ -31,13 +28,7 @@ class TalkListView(TemplateView):
         days = Talk.objects.dates("date", "day")
         hours = map(lambda x: str(x).zfill(2), range(9, 19))
 
-        # twitter user data
-        if hasattr(self.request.user, 'get_profile'):
-            user_profile = self.request.user.get_profile()
-            data = twitter_data(user_profile.oauth_token,
-                                user_profile.oauth_secret)
-            context['data'] = data
-
+        context['user'] = self.request.user
         context['days'] = days
         context['hours'] = hours
 
