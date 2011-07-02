@@ -7,17 +7,35 @@
             <p>{{ talk.abstract }}</p>
 
             <a href="{% url grade:choice_talk talk.id %}">Eu Vou</a>
-            {{ talk.user_set.all }}
+            <g:plusone></g:plusone>
+
+            <br><br>
+
             <fieldset>
                 <legend>Palestrantes</legend>
                 <ul>
                     {% for author in talk.authors.all %}
                         <li>{{ author.name }}</li>
+                    {% empty %}
+                    Nenhum palestrante.
                     {% endfor %}
                 </ul>
             </fieldset>
 
-            <div><g:plusone></g:plusone></div>
+            <br><br>
+
+            <fieldset>
+                <legend>Ouvintes</legend>
+                <ul>
+                    {% for listener in talk.listeners.all %}
+                        <li>{{ listener.username }}</li>
+                    {% empty %}
+                    Nenhum ouvinte.
+                    {% endfor %}
+                </ul>
+            </fieldset>
+
+            <br><br>
 
             <a href="{% url grade:talks %}">Voltar</a>
         </div>
