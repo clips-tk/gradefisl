@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for talks_in_day in talks_by_day %}
+    <div class="row">
+        <ul id='talks' class="grid_12">
+            {% for talk in talks_in_day  %}
+                <li>{{ talk }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+{% endblock %}

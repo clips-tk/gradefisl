@@ -1,0 +1,3 @@
+{% for talk in talks %}
+    <a class="talk" href="{% url grade:talk talk.id %}">{{ talk.title }}</a>
+{% endfor %}

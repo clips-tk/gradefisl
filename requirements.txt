@@ -1,0 +1,7 @@
+django-debug-toolbar==0.8.5
+django-dtpanel-htmltidy==0.1.1
+django-social-auth==0.3.20
+python-twitter==0.8.2
+oauth2==1.5.170
+django-nose==0.1.3
+rednose==0.2.4

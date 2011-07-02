@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+    
+{% block content %}
+    <div class="row">
+        <div class="grid_12 talk">
+            <h2>{{ talk.title }}</h2>
+            <p>{{ talk.abstract }}</p>
+
+            <a href="{% url grade:choice_talk talk.id %}">Eu Vou</a>
+            {{ talk.user_set.all }}
+            <fieldset>
+                <legend>Palestrantes</legend>
+                <ul>
+                    {% for author in talk.authors.all %}
+                        <li>{{ author.name }}</li>
+                    {% endfor %}
+                </ul>
+            </fieldset>
+
+            <div><g:plusone></g:plusone></div>
+
+            <a href="{% url grade:talks %}">Voltar</a>
+        </div>
+    </div>
+{% endblock content %}

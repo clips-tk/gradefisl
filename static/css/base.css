@@ -1,0 +1,33 @@
+body {
+    
+}
+
+.header {
+    border-bottom: 1px solid black;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.day {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.day h2, .talk h2 {
+    border-bottom: 5px solid #5D9A5D;
+    color: #606060;
+}
+
+.day .hour .talk {
+    display: block;
+    padding: 10px;
+    color: #404040;
+    text-decoration: none;
+}
+
+.day .hour .talk:hover {
+    text-decoration: underline;
+    color: #000;
+}
