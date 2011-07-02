@@ -6,10 +6,11 @@
             <h2>{{ talk.title }}</h2>
             <p>{{ talk.abstract }}</p>
 
+            {% if user.is_authenticated %}
             <a href="{% url grade:choice_talk talk.id %}">Eu Vou</a>
             <g:plusone></g:plusone>
-
             <br><br>
+            {% endif %}
 
             <fieldset>
                 <legend>Palestrantes</legend>
