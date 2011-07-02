@@ -8,14 +8,22 @@ from django.core.urlresolvers import reverse
 # user profile
 from twitterauth.models import Profile
 
+from django.conf import settings
+
 import oauth2 as oauth
 import twitter
 import cgi
 
 # twitter constants
 # twitter auth
-TWITTER_TOKEN = 'qCDMfzY7EwYYvfexCRU0g'
-TWITTER_SECRET = 'XaKiXHIiSWvfAAxRfnPOD7anvEdQvL2Dkkp5uv8UU4'
+
+if not settings.DEBUG:
+    TWITTER_TOKEN = 'qCDMfzY7EwYYvfexCRU0g'
+    TWITTER_SECRET = 'XaKiXHIiSWvfAAxRfnPOD7anvEdQvL2Dkkp5uv8UU4'
+else:
+    TWITTER_TOKEN = 'Jgv5yKceI2hl7t2v1zhDwA'
+    TWITTER_SECRET = 'OzIAPLSxlwnGX4V8iSl2eXD9VFS65EwjTlfLpgNaAEE'
+
 consumer = oauth.Consumer(TWITTER_TOKEN, TWITTER_SECRET)
 client = oauth.Client(consumer)
 
@@ -113,6 +121,8 @@ def twitter_authenticated(request):
     # functions for these things.
     user = authenticate(username=access_token['screen_name'],
                         password=access_token['oauth_token_secret'])
-    login(request, user)
+
+    if user is not None:
+        login(request, user)
 
     return HttpResponseRedirect(reverse('grade:talks'))
