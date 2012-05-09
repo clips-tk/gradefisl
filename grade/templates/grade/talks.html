@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FISL 2012 - Fórum Internacional do Software Livre</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" data-theme="a" id="now">
+  <div data-role="header">
+    <h1>
+      <a href="#home" data-rel="back" data-direction="reverse">
+        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
+      </a>
+    </h1>
+    <p>Todos os dias</p>
+    <p><small> Barra de filtros e ordenação: <a href="#by-day">por dia</a>, <a href="#by-track">por trilha, <a href="#by-listeners">+ populares</a>, <a href="#by-friends">+ amigos</a></small></p>
+  </div>
+  <div data-role="content">
+    <div data-role="collapsible-set">
+        {% for day in days %}
+                {% for hour in hours %}
+      <h1>Talks of {{ day|date:"d \d\e F \d\e Y" }}</h1>
+      <h3>{{ hour }}:00</h3>
+        <h2>{% display_talks day hour %}</h2>
+                {% endfor %}
+        {% endfor %}
+
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>12:00 &mdash; 15:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>15:00 &mdash; 18:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+    </div>
+  </div>
+  <div data-role="footer">
+    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
+  </div>
+</div>
+
+
+<div data-role="page" data-theme="a" id="by-day">
+  <div data-role="header">
+    <h1>
+      <a href="#home" data-rel="back" data-direction="reverse">
+        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
+      </a>
+    </h1>
+    <p>Todos os dias</p>
+    <p><small> Barra de filtros e ordenação: por dia, por trilha, + populares, + amigos </small></p>
+  </div>
+  <div data-role="content">
+    <div data-role="collapsible-set">
+      <h1>29/06</h1>
+      <h3>09:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>10:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>11:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h1>30/06</h1>
+      <h3>09:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>10:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>11:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h1>01/07</h1>
+      <h3>09:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>10:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>11:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h1>02/07</h1>
+      <h3>09:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>10:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <h3>11:00</h3>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>
+        <p>Sum&aacute;rio:</p>
+        <p>Palestrante:</p>
+        <p><a href="talk.html">Mais informações:</a></p>
+      </div>
+    </div>
+  </div>
+  <div data-role="footer">
+    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
+  </div>
+</div>
+
+
+<div data-role="page" data-theme="a" id="by-track">
+  <div data-role="header">
+    <h1>
+      <a href="#home" data-rel="back" data-direction="reverse">
+        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
+      </a>
+    </h1>
+    <p>Por trilha</p>
+  </div>
+  <div data-role="content">
+  </div>
+  <div data-role="footer">
+    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
+  </div>
+</div>
+
+
+<div data-role="page" data-theme="a" id="by-room">
+  <div data-role="header">
+    <h1>
+      <a href="#home" data-rel="back" data-direction="reverse">
+        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
+      </a>
+    </h1>
+    <p>Por sala</p>
+  </div>
+  <div data-role="content">
+  </div>
+  <div data-role="footer">
+    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
+  </div>
+</div>
+
+
+</body>
+</html>
