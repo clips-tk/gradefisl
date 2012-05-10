@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>FISL 2012 - Fórum Internacional do Software Livre</title>
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css" />
   <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
         {% block extra_style %}
@@ -16,7 +16,7 @@
   <div data-role="header">
     <h1>
       <a href="#home" data-rel="back" data-direction="reverse">
-        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
+        <img src="{{ STATIC_URL }}images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
       </a>
     </h1>
         {% endblock %}

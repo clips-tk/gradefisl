@@ -21,7 +21,14 @@
     <p><small> Barra de filtros e ordenação: <a href="#by-day">por dia</a>, <a href="#by-track">por trilha, <a href="#by-listeners">+ populares</a>, <a href="#by-friends">+ amigos</a></small></p>
   </div>
   <div data-role="content">
-
+    <div data-role="collapsible-set">
+        {% for day in days %}
+                {% for hour in hours %}
+      <h1>Talks of {{ day|date:"d \d\e F \d\e Y" }}</h1>
+      <h3>{{ hour }}:00</h3>
+        <h2>{% display_talks day hour %}</h2>
+                {% endfor %}
+        {% endfor %}
 
       <div data-role="collapsible" data-collapsed="true">
         <h3>T&iacute;tulo da palestra <span class="ui-li-count">09:00 &mdash; 10:00</span></h3>

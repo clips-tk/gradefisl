@@ -2,14 +2,7 @@
   <div data-role="collapsible" data-collapsed="true">
     <h3>{{ talk.title }}</h3>
     <p>Sum&aacute;rio: {{ talk.abstract }}</p>
-    <p>Palestrantes:</p>
-    <ul>
-    {% for author in talk.authors.all %}
-        <li>{{ author.name }}</li>
-    {% empty %}
-        Nenhum palestrante.
-    {% endfor %}
-    </ul>
+    <p>Palestrante: {{ talk.authors }}</p>
     <p><a href="{% url grade:talk talk.id %}">Mais informações:</a></p>
   </div>
 {% endfor %}
