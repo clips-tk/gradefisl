@@ -5,3 +5,4 @@
 *.swp
 local_settings.py
 public
+*~
