@@ -27,5 +27,3 @@ To start a development server, use the command:
     python2 manage.py runserver
 
 and access http://127.0.0.1:8000/ in your browser.
-
-The index view is rendered by the file `grade/templates/grade/talks_list.html`, which calls also the `file templates/base.html`.
