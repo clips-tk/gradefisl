@@ -5,10 +5,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView, TemplateView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render_to_response
 
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
 
+def index(request):
+    return render_to_response('grade/index.html')
 
 class TalkDetailView(DetailView):
     """ View utilizada para mostrar a palestra """
@@ -20,7 +23,7 @@ class TalkDetailView(DetailView):
 class TalkListView(TemplateView):
     """ View utilizada para mostrar as palestras """
 
-    template_name = "grade/talks.html"
+    template_name = "grade/talks_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(TalkListView, self).get_context_data(**kwargs)

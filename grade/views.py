@@ -5,10 +5,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView, TemplateView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render_to_response
 
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
 
+class IndexView(TemplateView):
+    """ View da homepage """
+
+    template_name = "grade/index.html"
 
 class TalkDetailView(DetailView):
     """ View utilizada para mostrar a palestra """
