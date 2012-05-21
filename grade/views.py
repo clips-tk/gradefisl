@@ -15,6 +15,11 @@ class IndexView(TemplateView):
 
     template_name = "grade/index.html"
 
+class SearchView(TemplateView):
+    """ View da homepage """
+
+    template_name = "grade/search.html"
+
 class TalkDetailView(DetailView):
     """ View utilizada para mostrar a palestra """
 

@@ -10,8 +10,10 @@ from django.shortcuts import render_to_response
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
 
-def index(request):
-    return render_to_response('grade/index.html')
+class IndexView(TemplateView):
+    """ View da homepage """
+
+    template_name = "grade/index.html"
 
 class TalkDetailView(DetailView):
     """ View utilizada para mostrar a palestra """
