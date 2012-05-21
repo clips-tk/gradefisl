@@ -10,15 +10,18 @@ from django.shortcuts import render_to_response
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
 
+
 class IndexView(TemplateView):
     """ View da homepage """
 
     template_name = "grade/index.html"
 
+
 class SearchView(TemplateView):
-    """ View da homepage """
+    """ View do buscador de palestras """
 
     template_name = "grade/search.html"
+
 
 class TalkDetailView(DetailView):
     """ View utilizada para mostrar a palestra """
