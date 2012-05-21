@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load grade_tags %}
+
+{% block content %}
+    
+    {% if user.is_authenticated %}
+        <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
+    {% else %}
+        <p><a href="{% url twitterauth:login %}">Login</a></p>
+    {% endif %}
+    
+
+    <p>Busca</p>
+<div data-role="content">
+    <div class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-c ui-focus"><input type="true" data-type="search" name="password" id="search" value="" class="ui-input-text ui-body-null"><a href="#" class="ui-input-clear ui-btn ui-btn-up-c ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-input-clear-hidden" title="clear text" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">clear text</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a></div>
+</div>
+
+{% endblock %}

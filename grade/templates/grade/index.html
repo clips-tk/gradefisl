@@ -1,113 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Forum Internacional de Software Livre &mdash; FISL 2012</title>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
-</head>
-<body>
-
-<div data-role="page" data-theme="a" id="home">
-  <div data-role="header">
-    <h1>
-      <a href="#home">
-        <img src="{{ STATIC_URL }}images/logo-fisl-2012.png" alt="Logo FISL 2012" />
-      </a>
-    </h1>
-    <a href="/login" data-icon="gear" data-rel="dialog" data-transition="slidedown" class="ui-btn-right">Login</a>
-    <a href="#igo" data-icon="star">Eu vou!</a>
-    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
-  </div>
-  <div data-role="content">
-    <p><a href="#search" data-role="button" data-icon="search">Busca</a></p>
-    <ul data-role="listview" data-inset="true" data-dividertheme="e">
-      <li data-role="list-divider">Programa&ccedil;&atilde;o</li>
-      <li><a href="talks">Agora! <span class="ui-li-count">12</span> </a></li>
-      <li><a href="talks#by-day">Por dia <span class="ui-li-count">4</span></a></li>
-      <li><a href="talks#by-track">Por trilha <span class="ui-li-count">7</span></a></li>
-      <li><a href="talks#by-room">Por sala <span class="ui-li-count">12</span></a></li>
-    </ul>
-    <ul data-role="listview" data-inset="true">
-      <li><a href="my-event.html">Meu evento</a></li>
-      <li><a href="twitter.html">Twitter</a></li>
-      <li><a href="sponsors.html">Patrocinadores</a></li>
-    </ul>
-  </div>
-  <div data-role="footer">
-    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
-  </div>
+{% extends "base.html" %}
+{% load grade_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+  <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
+{% else %}
+  <p><a href="{% url twitterauth:login %}">Login</a></p>
+{% endif %}
+<div data-role="content">
+  <p><a href="busca/" data-role="button" data-icon="search">Busca</a></p>
+  <ul data-role="listview" data-inset="true" data-dividertheme="e">
+    <li data-role="list-divider">Programa&ccedil;&atilde;o</li>
+    <li><a href="palestras/">Agora! <span class="ui-li-count">12</span> </a></li>
+    <li><a href="palestras/#by-day">Por dia <span class="ui-li-count">4</span></a></li>
+    <li><a href="palestras/#by-track">Por trilha <span class="ui-li-count">7</span></a></li>
+    <li><a href="palestras/#by-room">Por sala <span class="ui-li-count">12</span></a></li>
+  </ul>
+  <ul data-role="listview" data-inset="true">
+    <li><a href="my-event.html">Meu evento</a></li>
+    <li><a href="twitter.html">Twitter</a></li>
+    <li><a href="sponsors.html">Patrocinadores</a></li>
+  </ul>
 </div>
-
-
-<div data-role="page" data-theme="a" id="talks">
-  <div data-role="header">
-    <h1>
-      <a href="#home" data-rel="back" data-direction="reverse">
-        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
-      </a>
-    </h1>
-    <p>Palestras</p>
-  </div>
-  <div data-role="content">
-    <ul data-role="listview" data-inset="true" data-dividertheme="e">
-      <li data-role="list-divider">Palestras</li>
-      <li><a href="talks-now.html">Agora!</a></li>
-      <li><a href="talks-by-day.html">Por dia</a></li>
-      <li><a href="talks-by-zone.html">Por trilha</a></li>
-      <li><a href="talks-by-room.html">Por sala</a></li>
-      <li><a href="talks-by-speaker.html">Por palestrante</a></li>
-        </ul>
-        <ul data-role="listview" data-inset="true">
-      <li><a href="my-event.html">Meu evento</a></li>
-      <li><a href="twitter.html">Twitter</a></li>
-      <li><a href="sponsors.html">Patrocinadores</a></li>
-    </ul>
-  </div>
-  <div data-role="footer">
-    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
-  </div>
-</div>
-
-
-<div data-role="page" data-theme="a" id="search">
-  <div data-role="header">
-    <h1>
-      <a href="#home" data-rel="back" data-direction="reverse">
-        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
-      </a>
-    </h1>
-    <p>Busca</p>
-  </div>
-  <div data-role="content">
-    <div class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-c ui-focus"><input type="true" data-type="search" name="password" id="search" value="" class="ui-input-text ui-body-null"><a href="#" class="ui-input-clear ui-btn ui-btn-up-c ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-input-clear-hidden" title="clear text" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">clear text</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a></div>
-  </div>
-  <div data-role="footer">
-    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
-  </div>
-</div>
-
-
-<div data-role="page" data-theme="a" id="login">
-  <div data-role="header">
-    <h1>
-      <a href="#home" data-rel="back" data-direction="reverse">
-        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
-      </a>
-    </h1>
-    <p>Login</p>
-  </div>
-  <div data-role="content">
-
-
-  </div>
-  <div data-role="footer">
-    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
-  </div>
-</div>
-
-</body>
-</html>
+{% endblock %}
