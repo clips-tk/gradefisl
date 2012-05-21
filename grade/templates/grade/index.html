@@ -2,11 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Python Brasil - 6ª Edição</title>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
+  <title>Forum Internacional de Software Livre &mdash; FISL 2012</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
+  <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -14,10 +15,10 @@
   <div data-role="header">
     <h1>
       <a href="#home">
-        <img src="images/logo-fisl-2012.png" alt="Logo FISL 2012" />
+        <img src="{{ STATIC_URL }}images/logo-fisl-2012.png" alt="Logo FISL 2012" />
       </a>
     </h1>
-    <a href="#login" data-icon="gear" data-rel="dialog" data-transition="slidedown" class="ui-btn-right">Login</a>
+    <a href="/login" data-icon="gear" data-rel="dialog" data-transition="slidedown" class="ui-btn-right">Login</a>
     <a href="#igo" data-icon="star">Eu vou!</a>
     <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
   </div>
@@ -25,10 +26,10 @@
     <p><a href="#search" data-role="button" data-icon="search">Busca</a></p>
     <ul data-role="listview" data-inset="true" data-dividertheme="e">
       <li data-role="list-divider">Programa&ccedil;&atilde;o</li>
-      <li><a href="talks.html">Agora! <span class="ui-li-count">12</span> </a></li>
-      <li><a href="talks.html#by-day">Por dia <span class="ui-li-count">4</span></a></li>
-      <li><a href="talks.html#by-track">Por trilha <span class="ui-li-count">7</span></a></li>
-      <li><a href="talks.html#by-room">Por sala <span class="ui-li-count">12</span></a></li>
+      <li><a href="talks">Agora! <span class="ui-li-count">12</span> </a></li>
+      <li><a href="talks#by-day">Por dia <span class="ui-li-count">4</span></a></li>
+      <li><a href="talks#by-track">Por trilha <span class="ui-li-count">7</span></a></li>
+      <li><a href="talks#by-room">Por sala <span class="ui-li-count">12</span></a></li>
     </ul>
     <ul data-role="listview" data-inset="true">
       <li><a href="my-event.html">Meu evento</a></li>

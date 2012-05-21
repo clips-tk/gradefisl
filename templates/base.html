@@ -3,34 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <title>FISL 2012 - Fórum Internacional do Software Livre</title>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
   <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css" />
-  <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
-        {% block extra_style %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block header %}
-<div data-role="page" data-theme="a" id="now">
-  <div data-role="header">
-    <h1>
-      <a href="#home" data-rel="back" data-direction="reverse">
-        <img src="{{ STATIC_URL }}images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
-      </a>
-    </h1>
-    <p><small>Barra de filtros e ordenação: <a href="#by-day">por dia</a>, <a href="#by-track">por trilha, <a href="#by-listeners">+ populares</a>, <a href="#by-friends">+ amigos</a></small></p>
+  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script-->
+  <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+  <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
+  {% block extra_style %}
+  {% endblock %}
+</head>
+<body>
+  {% block header %}
+  <div data-role="page" data-theme="a" id="now">
+    <div data-role="header">
+      <h1>
+        <a href="#home" data-rel="back" data-direction="reverse">
+          <img src="{{ STATIC_URL }}images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
+        </a>
+      </h1>
+      <p><small>Barra de filtros e ordenação: <a href="#by-day">por dia</a>, <a href="#by-track">por trilha, <a href="#by-listeners">+ populares</a>, <a href="#by-friends">+ amigos</a></small></p>
+    </div>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}s
+    <div data-role="footer">
+      <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
+    </div>
   </div>
-        {% endblock %}
-        {% block content %}{% endblock %}
-
-  <div data-role="footer">
-    <p>FISL 2012 - F&oacute;rum Internacional de Software Livre</p>
-  </div>
-</div>
-        <!-- Inclua esta tag na seção head ou logo antes da tag de fechamento da seção body -->
-        <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-          {lang: 'pt-BR'}
-        </script>
-    </body>
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+    {lang: 'pt-BR'}
+  </script>
+</body>
 </html>
