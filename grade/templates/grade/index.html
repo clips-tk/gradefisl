@@ -1,31 +1,24 @@
 {% extends "base.html" %}
-
 {% load grade_tags %}
-
 {% block content %}
-    
-    {% if user.is_authenticated %}
-        <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
-    {% else %}
-        <p><a href="{% url twitterauth:login %}">Login</a></p>
-    {% endif %}
-    
-
-  <div data-role="content">
-    <p><a href="busca/" data-role="button" data-icon="search">Busca</a></p>
-    <ul data-role="listview" data-inset="true" data-dividertheme="e">
-      <li data-role="list-divider">Programa&ccedil;&atilde;o</li>
-      <li><a href="palestras/">Agora! <span class="ui-li-count">12</span> </a></li>
-      <li><a href="palestras/#by-day">Por dia <span class="ui-li-count">4</span></a></li>
-      <li><a href="palestras/#by-track">Por trilha <span class="ui-li-count">7</span></a></li>
-      <li><a href="palestras/#by-room">Por sala <span class="ui-li-count">12</span></a></li>
-    </ul>
-    <ul data-role="listview" data-inset="true">
-      <li><a href="my-event.html">Meu evento</a></li>
-      <li><a href="twitter.html">Twitter</a></li>
-      <li><a href="sponsors.html">Patrocinadores</a></li>
-    </ul>
-  </div>
-
-
+{% if user.is_authenticated %}
+  <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
+{% else %}
+  <p><a href="{% url twitterauth:login %}">Login</a></p>
+{% endif %}
+<div data-role="content">
+  <p><a href="busca/" data-role="button" data-icon="search">Busca</a></p>
+  <ul data-role="listview" data-inset="true" data-dividertheme="e">
+    <li data-role="list-divider">Programa&ccedil;&atilde;o</li>
+    <li><a href="palestras/">Agora! <span class="ui-li-count">12</span> </a></li>
+    <li><a href="palestras/#by-day">Por dia <span class="ui-li-count">4</span></a></li>
+    <li><a href="palestras/#by-track">Por trilha <span class="ui-li-count">7</span></a></li>
+    <li><a href="palestras/#by-room">Por sala <span class="ui-li-count">12</span></a></li>
+  </ul>
+  <ul data-role="listview" data-inset="true">
+    <li><a href="my-event.html">Meu evento</a></li>
+    <li><a href="twitter.html">Twitter</a></li>
+    <li><a href="sponsors.html">Patrocinadores</a></li>
+  </ul>
+</div>
 {% endblock %}
