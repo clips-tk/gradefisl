@@ -16,3 +16,8 @@
   margin: 0;
   padding: 0;
 }
+
+#logo-fisl {
+  max-width: 265px;
+  width: 100%;
+}
