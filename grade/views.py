@@ -47,6 +47,12 @@ class TalkListView(TemplateView):
 
         return context
 
+class AuthorDetailView(DetailView):
+    """ View utilizada para mostrar a palestra """
+
+    model = Author
+    context_object_name = 'author'
+
 
 def clean_data():
     """ Clean the grade models """
