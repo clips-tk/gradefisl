@@ -48,7 +48,7 @@ class TalkListView(TemplateView):
         return context
 
 class AuthorDetailView(DetailView):
-    """ View utilizada para mostrar a palestra """
+    """ View utilizada para mostrar o autor e sua lista de palestras """
 
     model = Author
     context_object_name = 'author'
