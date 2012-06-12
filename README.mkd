@@ -1,3 +1,12 @@
+# What is gradefisl?
+
+_gradefisl_ is a Django powered website that creates a mobile interface to the [FISL](http://softwarelivre.org/fisl13) programme. gradefisl can be used with another events that uses _papers-ng_ software.
+
+_gradefisl_ é um sistema em Django que cria interface mobile para a grade de programação do FISL, mas que pode ser utilizado com qualquer outro evento que utilize o software _papers-ng_ para organizar a grade de programação.
+
+Access a demo at http://vs1061.rosehosting.com:8000/
+
+
 # Installation instructions
 
 ## Requirements:
