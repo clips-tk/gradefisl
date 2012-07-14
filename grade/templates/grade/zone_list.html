@@ -13,7 +13,7 @@
 
   <div data-role="content">
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
-                {% for zone in object_list %}
+                {% for zone in zone_list %}
     <li><a href="{{ zone.id }}/">{{ zone }} <span class="ui-li-count">7</span></a></li>
                 {% endfor %}
   </ul>

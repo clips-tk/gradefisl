@@ -16,5 +16,6 @@ urlpatterns = patterns('grade.views',
         name='author'),
     url(r'^trilhas/$', ListView.as_view(
         model=Zone,
+        context_object_name="zone_list",
         )),
 )
