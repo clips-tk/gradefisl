@@ -7,7 +7,7 @@
   <div data-role="content">
         {% for day in days %}
             <div data-role="collapsible-set">
-              <h1>{{ day|date:"d \d\e F \d\e Y" }}</h1>
+              <h1>{{ day|date:"d \d\e F" }}</h1>
                 {% for hour in hours %}
                          <h3>{{ hour }}:00</h3>
                          {% display_talks day hour %}
