@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 {% load grade_tags %}
 {% block content %}
-{% if user.is_authenticated %}
-  <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
-{% else %}
-  <p><a href="{% url twitterauth:login %}">Login</a></p>
-{% endif %}
+
 <div data-role="content">
   <p><a href="busca/" data-role="button" data-icon="search">Busca</a></p>
   <ul data-role="listview" data-inset="true" data-dividertheme="e">

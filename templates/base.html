@@ -24,6 +24,11 @@
       <p><small>Barra de filtros e ordenação: <a href="#by-day">por dia</a>, <a href="#by-track">por trilha, <a href="#by-listeners">+ populares</a>, <a href="#by-friends">+ amigos</a></small></p>
     </div>
     {% endblock %}
+    {% if user.is_authenticated %}
+        <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
+    {% else %}
+        <p><a href="{% url twitterauth:login %}">Login</a></p>
+    {% endif %}
     {% block content %}
     {% endblock %}
     <div data-role="footer">
