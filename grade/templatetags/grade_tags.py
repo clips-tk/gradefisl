@@ -15,3 +15,9 @@ def display_talks(day, hour):
     """ Show fisl talks given a day and hour """
 
     return {'talks': Talk.objects.filter(date=day, hour=hour)}
+
+@register.inclusion_tag('tags/display_talks_zone.html')
+def display_talks_zone(day, hour, zone):
+    """ Show fisl talks given a day and hour """
+
+    return {'talks': Talk.objects.filter(date=day, hour=hour, zone=zone)}

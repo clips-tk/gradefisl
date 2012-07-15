@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load grade_tags %}
+
+{% block content %}
+    
+    {% if user.is_authenticated %}
+        <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
+    {% else %}
+        <p><a href="{% url twitterauth:login %}">Login</a></p>
+    {% endif %}
+    
+
+  <div data-role="content">
+        {% for day in days %}
+            <div data-role="collapsible-set">
+              <h1>{{ day|date:"d \d\e F \d\e Y" }}</h1>
+                {% for hour in hours %}
+                         <h3>{{ hour }}:00</h3>
+                         {% display_talks_zone day hour zone %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+  </div>
+{% endblock %}

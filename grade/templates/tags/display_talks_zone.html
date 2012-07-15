@@ -1,0 +1,16 @@
+{% for talk in talks %}
+  <div data-role="collapsible" data-collapsed="true">
+    <h3>{{ talk.title }}</h3>
+    <p>{{ talk.abstract }}</p>
+    <p>Palestrantes:</p>
+    <ul>
+    {% for author in talk.authors.all %}
+        <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
+    {% empty %}
+        Nenhum palestrante.
+    {% endfor %}
+    </ul>
+    <p><b>Trilha / Área:</b> {{ talk.zone }} / {{ talk.area }}</p>
+    <p><a href="{% url grade:talk talk.id %}">Mais informações</a></p>
+  </div>
+{% endfor %}
