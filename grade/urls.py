@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import patterns, url
 from views import TalkListView, TalkDetailView, IndexView, SearchView, AuthorDetailView, ZoneDetailView
 from django.views.generic import ListView
-from grade.models import Zone
+from grade.models import Zone, Room
 
 urlpatterns = patterns('grade.views',
     url(r'^palestras/$', TalkListView.as_view(), name='talks'),
@@ -18,6 +18,8 @@ urlpatterns = patterns('grade.views',
         model=Zone,
         context_object_name="zone_list")),
     url(r'^trilhas/(?P<pk>\d+)/$', ZoneDetailView.as_view(),
-    name='zone'
-        ),
+    name='zone'),
+    url(r'^salas/$', ListView.as_view(
+        model=Room,
+        context_object_name="rooms")),
 )

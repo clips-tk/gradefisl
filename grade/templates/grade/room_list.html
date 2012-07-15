@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load grade_tags %}
+
+{% block content %}
+  <div data-role="content">
+  <ul data-role="listview" data-inset="true" data-dividertheme="e">
+                {% for room in rooms %}
+    <li><a href="{{ zone.id }}/">{{ room }} <span class="ui-li-count">7</span></a></li>
+                {% endfor %}
+  </ul>
+            </div>
+  </div>
+{% endblock %}
