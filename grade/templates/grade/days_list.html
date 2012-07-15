@@ -5,8 +5,8 @@
 {% block content %}
   <div data-role="content">
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
-                {% for room in rooms %}
-    <li><a href="{{ room.id }}/">{{ room }} <span class="ui-li-count">7</span></a></li>
+                {% for day in days %}
+    <li><a href="{{ day }}/">{{ day|date:"d \d\e F" }} <span class="ui-li-count">7</span></a></li>
                 {% endfor %}
   </ul>
             </div>
