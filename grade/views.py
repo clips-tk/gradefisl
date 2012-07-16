@@ -66,6 +66,25 @@ class ZoneDetailView(DetailView):
 
         return context
 
+class RoomDetailView(DetailView):
+    """ View utilizada para mostrar as palestras por sala """
+
+    model = Room
+    template_name = "grade/room_talk_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(RoomDetailView, self).get_context_data(**kwargs)
+
+        days = self.get_object().talk_set.all().dates("date", "day")
+        hours = map(lambda x: str(x).zfill(2), range(9, 19))
+
+        context['zone'] = self.get_object()
+        context['user'] = self.request.user
+        context['days'] = days
+        context['hours'] = hours
+
+        return context
+
 class AuthorDetailView(DetailView):
     """ View utilizada para mostrar o autor e sua lista de palestras """
 

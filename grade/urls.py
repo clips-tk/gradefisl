@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, url
-from views import TalkListView, TalkDetailView, IndexView, SearchView, AuthorDetailView, ZoneDetailView
+from views import TalkListView, TalkDetailView, IndexView, SearchView, AuthorDetailView, ZoneDetailView, RoomDetailView
 from django.views.generic import ListView
 from grade.models import Zone, Room, Talk
 
@@ -22,6 +22,8 @@ urlpatterns = patterns('grade.views',
     url(r'^salas/$', ListView.as_view(
         model=Room,
         context_object_name="rooms")),
+    url(r'^salas/(?P<pk>\d+)/$', RoomDetailView.as_view(),
+    name='room'),
     url(r'^dia/$', ListView.as_view(
         queryset=Talk.objects.dates("date", "day"),
         template_name="grade/days_list.html",
