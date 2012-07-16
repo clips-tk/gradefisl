@@ -7,7 +7,7 @@
 
 
             <fieldset>
-                <legend>Palestras</legend>
+                <legend><h3>Palestras</h3></legend>
                 <ul>
                     {% for talk in author.talk_set.all %}
                         <li><a href="{% url grade:talk talk.id %}">{{ talk.title }}</a></li>
@@ -19,8 +19,6 @@
 
             <br /><br />
 
-
-            <a href="{% url grade:talks %}">Voltar</a>
         </div>
     </div>
 {% endblock content %}
