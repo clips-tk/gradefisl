@@ -6,9 +6,8 @@
   <div data-role="content">
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
                 {% for day in days %}
-    <li><a href="{{ day }}/">{{ day|date:"d \d\e F" }} <span class="ui-li-count">7</span></a></li>
+    <li><a href="{{ day|date:"d\-F\-Y" }}/">{{ day|date:"d \d\e F" }} <span class="ui-li-count">7</span></a></li>
                 {% endfor %}
   </ul>
-            </div>
   </div>
 {% endblock %}
