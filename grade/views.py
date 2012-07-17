@@ -6,6 +6,7 @@ from django.views.generic import DetailView, TemplateView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
+from datetime import datetime, date
 
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
@@ -48,7 +49,7 @@ class TalkListView(TemplateView):
         return context
 
 class ZoneDetailView(DetailView):
-    """ View utilizada para mostrar as palestras por zona """
+    """ View utilizada para mostrar as palestras por trilha """
 
     model = Zone
     template_name = "grade/zone_talk_list.html"
@@ -82,6 +83,21 @@ class RoomDetailView(DetailView):
         context['user'] = self.request.user
         context['days'] = days
         context['hours'] = hours
+
+        return context
+
+class NowListView(TemplateView):
+    """ View utilizada para mostrar as próximas palestras da grade """
+
+    template_name = "grade/now_talk_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(NowListView, self).get_context_data(**kwargs)
+
+        context['user'] = self.request.user
+        context['day'] = date.today()
+        context['hour'] = datetime.now().hour
+        context['next_hour'] = datetime.now().hour + 1
 
         return context
 

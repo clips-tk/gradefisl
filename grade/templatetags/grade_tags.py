@@ -16,7 +16,7 @@ def display_talks(day, hour):
 
     return {'talks': Talk.objects.filter(date=day, hour=hour)}
 
-@register.inclusion_tag('tags/display_talks_zone.html')
+@register.inclusion_tag('tags/display_talks.html')
 def display_talks_zone(day, hour, zone):
     """ Show fisl talks given a day, hour and zone """
 
@@ -27,3 +27,9 @@ def display_talks_room(day, hour, room):
     """ Show fisl talks given a day, hour and room """
 
     return {'talks': Talk.objects.filter(date=day, hour=hour, room=room)}
+
+@register.inclusion_tag('tags/display_talks.html')
+def display_talks_next_hour(day, next_hour):
+    """ Show fisl talks at the next hour """
+
+    return {'talks': Talk.objects.filter(date=day, hour=next_hour)}

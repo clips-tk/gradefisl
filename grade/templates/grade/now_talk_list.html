@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load grade_tags %}
+
+{% block content %}
+
+  <div data-role="content">
+        <div data-role="collapsible-set">
+                     <h3>Acontecendo agora</h3>
+                     {% display_talks day hour %}
+                     <h3>Próxima Sessão - {{ next_hour }}:00</h3>
+                     {% display_talks_next_hour day next_hour %}
+        </div>
+  </div>
+{% endblock %}
