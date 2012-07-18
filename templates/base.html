@@ -17,25 +17,25 @@
   <div data-role="page" data-theme="a" id="now">
     <div data-role="header">
       <h1>
-        <a href="#home" data-rel="back" data-direction="reverse">
+        <a href="{% url grade:index %}" data-rel="back" data-direction="reverse">
           <img id="logo-fisl" src="{{ STATIC_URL }}images/logo-fisl-2012.png" alt="Logo FISL 2012" border="0" />
         </a>
       </h1>
     </div>
     {% endblock %}
-    {% if user.is_authenticated %}
-        <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
-    {% else %}
-        <p><a href="{% url twitterauth:login %}">Login</a></p>
-    {% endif %}
+<!--    {% if user.is_authenticated %}-->
+<!--        <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>-->
+<!--    {% else %}-->
+<!--        <p><a href="{% url twitterauth:login %}">Login</a></p>-->
+<!--    {% endif %}-->
     {% block content %}
     {% endblock %}
     <div data-role="footer">
       <p>FISL 2013 - F&oacute;rum Internacional de Software Livre</p>
     </div>
   </div>
-  <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-    {lang: 'pt-BR'}
-  </script>
+<!--  <script type="text/javascript" src="https://apis.google.com/js/plusone.js">-->
+<!--    {lang: 'pt-BR'}-->
+<!--  </script>-->
 </body>
 </html>
