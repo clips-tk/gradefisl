@@ -2,7 +2,7 @@
 
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import DetailView, TemplateView
+from django.views.generic import DetailView, TemplateView, ListView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
@@ -98,6 +98,25 @@ class NowListView(TemplateView):
         context['day'] = date.today()
         context['hour'] = datetime.now().hour
         context['next_hour'] = datetime.now().hour + 1
+
+        return context
+
+class DayTalkListView(ListView):
+    """ View utilizada para mostrar as palestras por dia"""
+
+    template_name = "grade/talks_list.html"
+
+    def get_queryset(self):
+        self.date_url = Talk.objects.dates("date", "day")[int(self.args[0])]
+
+    def get_context_data(self, **kwargs):
+        context = super(DayTalkListView, self).get_context_data(**kwargs)
+
+        hours = map(lambda x: str(x).zfill(2), range(9, 19))
+
+        context['user'] = self.request.user
+        context['days'] = [self.date_url]
+        context['hours'] = hours
 
         return context
 
