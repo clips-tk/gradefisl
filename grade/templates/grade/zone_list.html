@@ -5,8 +5,9 @@
 {% block content %}
   <div data-role="content">
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
+    <li data-role="list-divider">Trilhas</li>
                 {% for zone in zone_list %}
-    <li><a href="{{ zone.id }}/">{{ zone }} <span class="ui-li-count">7</span></a></li>
+    <li><a href="{{ zone.id }}/">{{ zone }}</span></a></li>
                 {% endfor %}
   </ul>
   </div>
