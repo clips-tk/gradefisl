@@ -25,9 +25,13 @@
                             Nenhum palestrante.
                         {% endfor %}
                         </ul>
+
                         <p><strong>Data:</strong> {{ talk.date|date:"d \d\e F" }} - {{ talk.hour }}:00</p>
-                        <p><strong>Local:</strong> <a href="{% url grade:zone talk.room.id %}">Sala {{ talk.room }}</a></p>
-                        <p><strong>Trilha / Área:</strong> <a href="{% url grade:zone talk.zone.id %}">{{ talk.zone }}</a> / {{ talk.area }}</p>
+
+                        <p><strong>Local:</strong> <a href="{% url grade:room talk.room.id %}">Sala {{ talk.room }}</a></p>
+
+                        <p><strong>Trilha:</strong> <a href="{% url grade:zone talk.zone.id %}">{{ talk.zone }}</a></p>
+                        <p><strong>Área:</strong> {{ talk.area }}</p>
                     <!--    <p><a href="{% url grade:talk talk.id %}">Mais informações</a></p>-->
                       </div>
                     {% empty %}
