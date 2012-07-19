@@ -7,7 +7,7 @@
   <h2>Programação da trilha {{ zone.name }}</h2>
         {% for day in days %}
             <div data-role="collapsible" data-collapsed="true">
-              <h1>{{ day|date:"d \d\e F" }}</h1>
+              <h2>{{ day|date:"d \d\e F" }}</h2>
                 {% for hour in hours %}
                          <h3>{{ hour }}:00</h3>
                          {% display_talks_zone day hour zone %}
