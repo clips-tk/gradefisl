@@ -22,19 +22,10 @@ Access a demo at http://vs1061.rosehosting.com:8000/
 You can install these packages using `easy_install`.
 
 
-## Create database
-
-After install the requirements, run the following command to create your database, the initial data will be imported from the file `public/json/data.json`.
-
-    python2 manage.py syncdb
-
-
 ## Run and develop!
 
 To start a development server, use the command:
 
     python2 manage.py runserver
 
-and access http://127.0.0.1:8000/ in your browser.
-
-The index view is rendered by the file `grade/templates/grade/talks_list.html`, which calls also the `file templates/base.html`.
+Access http://127.0.0.1:8000/gerar_grade in your browser to generate a database. It will take some time... be patient! After it, access http://127.0.0.1:8000/ to navigate on the system.

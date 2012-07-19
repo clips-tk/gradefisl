@@ -40,7 +40,7 @@ class TalkListView(TemplateView):
         context = super(TalkListView, self).get_context_data(**kwargs)
 
         days = Talk.objects.dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(9, 19))
+        hours = map(lambda x: str(x).zfill(2), range(10, 20))
 
         context['user'] = self.request.user
         context['days'] = days
@@ -58,7 +58,7 @@ class ZoneDetailView(DetailView):
         context = super(ZoneDetailView, self).get_context_data(**kwargs)
 
         days = self.get_object().talk_set.all().dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(9, 19))
+        hours = map(lambda x: str(x).zfill(2), range(10, 20))
 
         context['zone'] = self.get_object()
         context['user'] = self.request.user
@@ -77,7 +77,7 @@ class RoomDetailView(DetailView):
         context = super(RoomDetailView, self).get_context_data(**kwargs)
 
         days = self.get_object().talk_set.all().dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(9, 19))
+        hours = map(lambda x: str(x).zfill(2), range(10, 20))
 
         context['zone'] = self.get_object()
         context['user'] = self.request.user
@@ -112,7 +112,7 @@ class DayTalkListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(DayTalkListView, self).get_context_data(**kwargs)
 
-        hours = map(lambda x: str(x).zfill(2), range(9, 19))
+        hours = map(lambda x: str(x).zfill(2), range(10, 20))
 
         context['user'] = self.request.user
         context['days'] = [self.date_url]
