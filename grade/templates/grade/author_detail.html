@@ -1,24 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="row">
-        <div class="grid_12 talk">
+  <div data-role="content">
             <h2>{{ author.name }}</h2>
 
-
-            <fieldset>
-                <legend><h3>Palestras</h3></legend>
-                <ul>
+                <h3>Palestras:</h3>
                     {% for talk in author.talk_set.all %}
-                        <li><a href="{% url grade:talk talk.id %}">{{ talk.title }}</a></li>
+                      <div data-role="collapsible" data-collapsed="true">
+                        <h3>{{ talk.title }}</h3>
+                        <p><b>{{ talk.title }}</b></p>
+                        <p>{{ talk.abstract }}</p>
+                        <p>Palestrantes:</p>
+                        <ul>
+                        {% for author in talk.authors.all %}
+                            <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
+                        {% empty %}
+                            Nenhum palestrante.
+                        {% endfor %}
+                        </ul>
+                        <p><b>Data:</b> {{ talk.date|date:"d \d\e F" }} - {{ talk.hour }}:00</p>
+                        <p><b>Local:</b> <a href="{% url grade:zone talk.room.id %}">Sala {{ talk.room }}</a></p>
+                        <p><b>Trilha / Área:</b> <a href="{% url grade:zone talk.zone.id %}">{{ talk.zone }}</a> / {{ talk.area }}</p>
+                    <!--    <p><a href="{% url grade:talk talk.id %}">Mais informações</a></p>-->
+                      </div>
                     {% empty %}
                     Nenhuma palestra.
                     {% endfor %}
-                </ul>
-            </fieldset>
 
             <br /><br />
 
-        </div>
     </div>
 {% endblock content %}
