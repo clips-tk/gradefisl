@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from datetime import datetime, date
+from django.db.models import Q
 
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
@@ -16,12 +17,6 @@ class IndexView(TemplateView):
     """ View da homepage """
 
     template_name = "grade/index.html"
-
-
-class SearchView(TemplateView):
-    """ View do buscador de palestras """
-
-    template_name = "grade/search.html"
 
 
 class TalkDetailView(DetailView):
@@ -48,6 +43,7 @@ class TalkListView(TemplateView):
 
         return context
 
+
 class ZoneDetailView(DetailView):
     """ View utilizada para mostrar as palestras por trilha """
 
@@ -66,6 +62,7 @@ class ZoneDetailView(DetailView):
         context['hours'] = hours
 
         return context
+
 
 class RoomDetailView(DetailView):
     """ View utilizada para mostrar as palestras por sala """
@@ -86,6 +83,7 @@ class RoomDetailView(DetailView):
 
         return context
 
+
 class NowListView(TemplateView):
     """ View utilizada para mostrar as próximas palestras da grade """
 
@@ -100,6 +98,7 @@ class NowListView(TemplateView):
         context['next_hour'] = datetime.now().hour + 1
 
         return context
+
 
 class DayTalkListView(ListView):
     """ View utilizada para mostrar as palestras por dia"""
@@ -119,6 +118,34 @@ class DayTalkListView(ListView):
         context['hours'] = hours
 
         return context
+
+
+class SearchTalkListView(ListView):
+    """ View utilizada para mostrar as palestras por dia"""
+
+    template_name = "grade/search_talk_list.html"
+
+    def get_queryset(self):
+        self.query = self.request.GET.get('search', '')
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchTalkListView, self).get_context_data(**kwargs)
+
+        if self.query:
+            qset = (
+                Q(title__icontains = self.query) |
+                Q(authors__name__icontains = self.query)
+            )
+            context['talks'] = Talk.objects.filter(qset).order_by('date', 'hour').distinct()
+        else:
+            context['talks'] = []
+
+        context['user'] = self.request.user
+        context['query'] = self.query
+
+
+        return context
+
 
 class AuthorDetailView(DetailView):
     """ View utilizada para mostrar o autor e sua lista de palestras """
