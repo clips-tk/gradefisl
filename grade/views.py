@@ -126,6 +126,11 @@ class AuthorDetailView(DetailView):
     model = Author
     context_object_name = 'author'
 
+class AboutView(TemplateView):
+    """ View da página Sobre """
+
+    template_name = "grade/about.html"
+
 
 def clean_data():
     """ Clean the grade models """
