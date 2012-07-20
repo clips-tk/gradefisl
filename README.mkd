@@ -24,6 +24,8 @@ You can install these packages using `easy_install`.
 
 ## Run and develop!
 
+Rename the file `sample-settings.py` to `settings.py`.
+
 To start a development server, use the command:
 
     python2 manage.py runserver
