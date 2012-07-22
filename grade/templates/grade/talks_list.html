@@ -5,14 +5,27 @@
 {% block content %}
 
   <div data-role="content">
-        {% for day in days %}
-            <div data-role="collapsible-set">
-              <h2>{{ day|date:"d \d\e F" }}</h2>
-                {% for hour in hours %}
-                         <h3>{{ hour }}:00</h3>
-                         {% display_talks day hour %}
-                {% endfor %}
-            </div>
+    <div data-role="navbar" data-position="fixed" data-fullscreen="true">
+      <!--ul>
+        {% for hour in hours %}
+          <li><a href="./#hour-{{ hour }}">{{ hour }}</a></li>
         {% endfor %}
+      </ul-->
+    </div>
+    {% for day in days %}
+    <div data-role="collapsible-set">
+      <h2>{{ day|date:"d \d\e F" }}</h2>
+      {% for hour in hours %}
+        <div data-role="collapsible-set">
+          <h3 id="hour-{{ hour }}" data-role="collapsible">{{ hour }}:00</h3>
+          {% display_talks day hour %}
+        </div>
+        <!--ul data-role="listview" data-inset="true" data-dividertheme="e">
+          <li><h3 id="hour-{{ hour }}" data-role="list-divider">{{ hour }}:00</h3></li>
+          <li>{% display_talks day hour %}</li>
+        </ul-->
+      {% endfor %}
+    </div>
+  {% endfor %}
   </div>
 {% endblock %}

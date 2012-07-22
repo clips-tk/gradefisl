@@ -5,7 +5,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView, TemplateView, ListView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render_to_response
 from datetime import datetime, date
 from django.db.models import Q
 
@@ -133,8 +132,8 @@ class SearchTalkListView(ListView):
 
         if self.query:
             qset = (
-                Q(title__icontains = self.query) |
-                Q(authors__name__icontains = self.query)
+                Q(title__icontains=self.query) |
+                Q(authors__name__icontains=self.query)
             )
             context['talks'] = Talk.objects.filter(qset).order_by('date', 'hour').distinct()
         else:
@@ -142,7 +141,6 @@ class SearchTalkListView(ListView):
 
         context['user'] = self.request.user
         context['query'] = self.query
-
 
         return context
 
@@ -152,6 +150,7 @@ class AuthorDetailView(DetailView):
 
     model = Author
     context_object_name = 'author'
+
 
 class AboutView(TemplateView):
     """ View da página Sobre """
