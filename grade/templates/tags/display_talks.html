@@ -7,8 +7,8 @@
     <p>Palestrantes:</p>
     <ul>
     {% for author in talk.authors.all %}
-      <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
-  {% empty %}
+      <li>{{ author.name }}</li>
+    {% empty %}
       <li>Nenhum palestrante.</li>
     {% endfor %}
     </ul>
