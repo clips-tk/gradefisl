@@ -4,15 +4,15 @@
 
 {% block content %}
   <div data-role="content">
-  <h2>Programação da sala {{ room.name }}</h2>
-        {% for day in days %}
-            <div data-role="collapsible" data-collapsed="true">
-              <h2>{{ day|date:"d \d\e F" }}</h2>
-                {% for hour in hours %}
-                         <h3>{{ hour }}:00</h3>
-                         {% display_talks_room day hour room %}
-                {% endfor %}
-            </div>
-        {% endfor %}
+    <h2>Programação da sala {{ room.name }}</h2>
+    {% for day in days %}
+      <div data-role="collapsible" data-collapsed="true">
+        <h2>{{ day|date:"d \d\e F" }}</h2>
+          {% for hour in hours %}
+            <h3 data-role="list-divider">{{ hour }}:00</h3>
+            {% display_talks_room day hour room %}
+          {% endfor %}
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}

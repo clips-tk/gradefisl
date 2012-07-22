@@ -5,40 +5,39 @@
 
     <h2>Busca</h2>
     <form action="/busca/" method="get">
-            <input type="search" name="search" id="searc-basic" value="" placeholder="Título da palestra ou palestrante" data-theme="c" />
+      <input type="search" name="search" id="search-basic" value="" placeholder="Título da palestra ou palestrante" data-theme="c" />
     </form>
 
     {% if query %}
 
-            <p>Você buscou por <strong>{{ query }}</strong></p>
+      <p>Você buscou por <strong>{{ query }}</strong></p>
 
-                    {% for talk in talks %}
-                      <div data-role="collapsible" data-collapsed="true">
-                        <h3>{{ talk.title }}</h3>
-                        <p><strong>{{ talk.title }}</strong></p>
-                        <p>{{ talk.abstract }}</p>
-                        <p>Palestrantes:</p>
-                        <ul>
-                        {% for author in talk.authors.all %}
-                            <li>{{ author.name }}</li>
-                        {% empty %}
-                            Nenhum palestrante.
-                        {% endfor %}
-                        </ul>
+      {% for talk in talks %}
+        <div data-role="collapsible" data-collapsed="true">
+          <h3>{{ talk.title }}</h3>
+          <p><strong>{{ talk.title }}</strong></p>
+          <p>{{ talk.abstract }}</p>
+          <p>Palestrantes:</p>
+          <ul>
+          {% for author in talk.authors.all %}
+            <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
+          {% empty %}
+            Nenhum palestrante.
+          {% endfor %}
+          </ul>
+          <p><strong>Data:</strong> {{ talk.date|date:"d \d\e F" }} - {{ talk.hour }}:00</p>
+          <p><strong>Local:</strong> <a href="{% url grade:room talk.room.id %}">Sala {{ talk.room }}</a></p>
+          <p><strong>Trilha:</strong> <a href="{% url grade:zone talk.zone.id %}">{{ talk.zone }}</a></p>
+          <p><strong>Área:</strong> {{ talk.area }}</p>
+          <!--p><a href="{% url grade:talk talk.id %}">Mais informações</a></p-->
+        </div>
+      {% empty %}
+        Nenhuma palestra encontrada.
+      {% endfor %}
 
-                        <p><strong>Data:</strong> {{ talk.date|date:"d \d\e F" }} - {{ talk.hour }}:00</p>
+      <br /><br />
 
-                        <p><strong>Local:</strong> <a href="{% url grade:room talk.room.id %}">Sala {{ talk.room }}</a></p>
-
-                        <p><strong>Trilha:</strong> <a href="{% url grade:zone talk.zone.id %}">{{ talk.zone }}</a></p>
-                        <p><strong>Área:</strong> {{ talk.area }}</p>
-                    <!--    <p><a href="{% url grade:talk talk.id %}">Mais informações</a></p>-->
-                      </div>
-                    {% empty %}
-                    Nenhuma palestra encontrada.
-                    {% endfor %}
-
-            <br /><br />
     {% endif %}
-    </div>
+
+  </div>
 {% endblock content %}

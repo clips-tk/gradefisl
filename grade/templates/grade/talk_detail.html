@@ -1,54 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="row">
-        <div class="grid_12 talk">
-            <h2>{{ talk.title }}</h2>
-            <p>{{ talk.abstract }}</p>
+  <div class="row">
+    <div class="grid_12 talk">
+      <h2>{{ talk.title }}</h2>
+      <p>{{ talk.abstract }}</p>
 
-            {% if user.is_authenticated %}
-            <a href="{% url grade:choice_talk talk.id %}">Eu Vou</a>
-            <g:plusone></g:plusone>
-            <br /><br />
-            {% endif %}
+      {% if user.is_authenticated %}
+        <a href="{% url grade:choice_talk talk.id %}">Eu Vou!</a>
+        <g:plusone></g:plusone>
+        <br /><br />
+      {% endif %}
 
-            <fieldset>
-                <legend>Palestrantes</legend>
-                <ul>
-                    {% for author in talk.authors.all %}
-                        <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
-                    {% empty %}
-                    Nenhum palestrante.
-                    {% endfor %}
-                </ul>
-            </fieldset>
+      <fieldset>
+        <legend>Palestrantes</legend>
+        <ul>
+          {% for author in talk.authors.all %}
+            <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
+          {% empty %}
+            Nenhum palestrante.
+          {% endfor %}
+        </ul>
+      </fieldset>
 
-            <fieldset>
-                    <legend><b>Trilha / Área:</b></legend>
-                    <p>{{ talk.zone }} / {{ talk.area }}</p>
-            </fieldset>
+      <fieldset>
+        <legend><b>Trilha / &Aacute;rea:</b></legend>
+        <p>{{ talk.zone }} / {{ talk.area }}</p>
+      </fieldset>
 
-            <br />
+      <br />
 
-            <fieldset>
-                <legend>Ouvintes</legend>
-                <ul>
-                    {% for listener in talk.listeners.all %}
-                        <p>
-                        <img src="http://api.twitter.com/1/users/profile_image/?screen_name={{ listener.username }}&size=bigger"
-                             title="{{ listener.username }}"
-                             alt="{{ listener.username }}" /><br>
-                        {{ listener.username }}
-                        </p>
-                    {% empty %}
-                    Nenhum ouvinte.
-                    {% endfor %}
-                </ul>
-            </fieldset>
+      <fieldset>
+          <legend>Ouvintes</legend>
+          <ul>
+            {% for listener in talk.listeners.all %}
+              <p><img src="http://api.twitter.com/1/users/profile_image/?screen_name={{ listener.username }}&size=bigger" title="{{ listener.username }}" alt="{{ listener.username }}" /><br />{{ listener.username }}</p>
+            {% empty %}
+              Nenhum ouvinte.
+            {% endfor %}
+          </ul>
+      </fieldset>
 
-            <br /><br />
+      <br /><br />
 
-            <a href="{% url grade:talks %}">Voltar</a>
-        </div>
+      <a data-rel="back" data-direction="reverse" href="{% url grade:talks %}">Voltar</a>
     </div>
+  </div>
 {% endblock content %}

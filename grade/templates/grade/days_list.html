@@ -4,11 +4,11 @@
 
 {% block content %}
   <div data-role="content">
-  <ul data-role="listview" data-inset="true" data-dividertheme="e">
-    <li data-role="list-divider">Programa&ccedil;&atilde;o por dia</li>
-                {% for day in days %}
-    <li><a href="{{ forloop.counter0 }}/">{{ day|date:"d \d\e F" }}</span></a></li>
-                {% endfor %}
-  </ul>
+    <ul data-role="listview" data-inset="true" data-dividertheme="e">
+      <li data-role="list-divider">Programa&ccedil;&atilde;o por dia</li>
+      {% for day in days %}
+        <li><a href="{{ forloop.counter0 }}/">{{ day|date:"d \d\e F" }}</span></a></li>
+      {% endfor %}
+    </ul>
   </div>
 {% endblock %}
