@@ -26,8 +26,12 @@ You can install these packages using `easy_install`.
 
 Rename the file `sample-settings.py` to `settings.py`.
 
-To start a development server, use the command:
+To create your database, execute the command:
+
+    python2 manage.py syncdb 
+
+So start a development server:
 
     python2 manage.py runserver
 
-Access http://127.0.0.1:8000/gerar_grade in your browser to generate a database. It will take some time... be patient! After it, access http://127.0.0.1:8000/ to navigate on the system.
+Access http://127.0.0.1:8000/gerar_grade in your browser to populate the database. It will take some time... be patient! After it, access http://127.0.0.1:8000/ to navigate on the system.
