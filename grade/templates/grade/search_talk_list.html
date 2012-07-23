@@ -10,14 +10,14 @@
 
     {% if query %}
 
-      <p>Você buscou por <strong>{{ query }}</strong></p>
+      <p>Você buscou por <strong>{{ query }}</strong>.</p>
 
       {% for talk in talks %}
         <div data-role="collapsible" data-collapsed="true">
           <h3>{{ talk.title }}</h3>
           <p><strong>{{ talk.title }}</strong></p>
           <p>{{ talk.abstract }}</p>
-          <p>Palestrantes:</p>
+          <p><strong>Palestrantes:</strong></p>
           <ul>
           {% for author in talk.authors.all %}
             <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
@@ -34,8 +34,6 @@
       {% empty %}
         Nenhuma palestra encontrada.
       {% endfor %}
-
-      <br /><br />
 
     {% endif %}
 

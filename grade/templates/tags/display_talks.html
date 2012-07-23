@@ -4,7 +4,7 @@
     <p><strong>{{ talk.title }}</strong></p>
     <p>{{ talk.abstract }}</p>
     <!-- TODO: verify plural/singular -->
-    <p>Palestrantes:</p>
+    <p><strong>Palestrantes:</strong></p>
     <ul>
     {% for author in talk.authors.all %}
       <li>{{ author.name }}</li>
