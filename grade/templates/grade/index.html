@@ -3,7 +3,9 @@
 {% block content %}
 
 <div data-role="content">
-  <p><a href="busca/" data-role="button" data-icon="search">Busca</a></p>
+  <form action="/busca/" method="get">
+    <input type="search" name="search" id="search-basic" value="" placeholder="Busca"/>
+  </form>
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
     <li data-role="list-divider" class="ui-bar-c">Programa&ccedil;&atilde;o</li>
     <li><a href="agora/">Agora!</span> </a></li>
