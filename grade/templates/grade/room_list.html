@@ -5,7 +5,7 @@
 {% block content %}
   <div data-role="content">
     <ul data-role="listview" data-inset="true" data-dividertheme="e">
-      <li data-role="list-divider">Salas</li>
+      <li data-role="list-divider" class="ui-bar-c">Salas</li>
       {% for room in rooms %}
         <li><a href="{{ room.id }}/" title="{{ room }}">{{ room }}</span></a></li>
       {% endfor %}

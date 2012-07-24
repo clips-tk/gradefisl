@@ -5,8 +5,6 @@
 {% block content %}
 
   <div data-role="content">
-    <div data-role="navbar" data-position="fixed" data-fullscreen="true">
-    </div>
     {% for day in days %}
     <div data-role="collapsible-set">
       <h2>{{ day|date:"d \d\e F" }}</h2>
