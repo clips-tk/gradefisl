@@ -39,13 +39,13 @@
       </h1>
     </div>
     {% endblock %}
-    <!-- XXX: not working
+
     {% if user.is_authenticated %}
     <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
     {% else %}
-    <p><a href="{% url twitterauth:login %}">Login</a></p>
+    <p><a href="{% url twitterauth:login %}" rel="external">Login</a></p>
     {% endif %}
-    -->
+
     {% block content %}
     {% endblock %}
 
