@@ -2,6 +2,7 @@ from django.conf.urls.defaults import patterns, url
 from views import TalkListView, TalkDetailView, IndexView, AuthorDetailView, ZoneDetailView, RoomDetailView, NowListView, DayTalkListView, AboutView, SearchTalkListView
 from django.views.generic import ListView
 from grade.models import Zone, Room, Talk
+from django.views.generic.simple import redirect_to
 
 urlpatterns = patterns('grade.views',
     url(r'^palestras/$', TalkListView.as_view(), name='talks'),
@@ -31,4 +32,6 @@ urlpatterns = patterns('grade.views',
     url(r'^agora/$', NowListView.as_view(), name='now'),
     url(r'^sobre/$', AboutView.as_view(), name='about'),
     url(r'^busca/$', SearchTalkListView.as_view()),
+    url(r'^code/$', redirect_to, {'url': 'https://github.com/willemarcel/gradefisl'}),
+
 )
