@@ -110,7 +110,7 @@ class DayTalkListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(DayTalkListView, self).get_context_data(**kwargs)
 
-        hours = map(lambda x: str(x).zfill(2), range(10, 20))
+        hours = Talk.objects.filter(date = self.date_url).values_list('hour','minute').distinct().order_by('hour','minute')
 
         context['user'] = self.request.user
         context['days'] = [self.date_url]

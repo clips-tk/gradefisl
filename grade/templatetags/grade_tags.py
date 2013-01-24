@@ -11,10 +11,10 @@ register = Library()
 
 
 @register.inclusion_tag('tags/display_talks.html')
-def display_talks(day, hour):
+def display_talks(day, hour, minute):
     """ Show fisl talks given a day and hour """
 
-    return {'talks': Talk.objects.filter(date=day, hour=hour)}
+    return {'talks': Talk.objects.filter(date=day, hour=hour, minute=minute)}
 
 @register.inclusion_tag('tags/display_talks.html')
 def display_talks_zone(day, hour, zone):
