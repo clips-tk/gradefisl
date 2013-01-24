@@ -53,7 +53,7 @@ class ZoneDetailView(DetailView):
         context = super(ZoneDetailView, self).get_context_data(**kwargs)
 
         days = self.get_object().talk_set.all().dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(10, 20))
+        hours = self.get_object().talk_set.all().values_list('hour','minute').distinct().order_by('hour','minute')
 
         context['zone'] = self.get_object()
         context['user'] = self.request.user
@@ -73,7 +73,7 @@ class RoomDetailView(DetailView):
         context = super(RoomDetailView, self).get_context_data(**kwargs)
 
         days = self.get_object().talk_set.all().dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(10, 20))
+        hours = self.get_object().talk_set.all().values_list('hour','minute').distinct().order_by('hour','minute')
 
         context['zone'] = self.get_object()
         context['user'] = self.request.user

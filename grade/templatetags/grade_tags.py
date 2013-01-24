@@ -17,16 +17,16 @@ def display_talks(day, hour, minute):
     return {'talks': Talk.objects.filter(date=day, hour=hour, minute=minute)}
 
 @register.inclusion_tag('tags/display_talks.html')
-def display_talks_zone(day, hour, zone):
+def display_talks_zone(day, hour, minute, zone):
     """ Show fisl talks given a day, hour and zone """
 
-    return {'talks': Talk.objects.filter(date=day, hour=hour, zone=zone)}
+    return {'talks': Talk.objects.filter(date=day, hour=hour, minute=minute, zone=zone)}
 
 @register.inclusion_tag('tags/display_talks.html')
-def display_talks_room(day, hour, room):
+def display_talks_room(day, hour, minute, room):
     """ Show fisl talks given a day, hour and room """
 
-    return {'talks': Talk.objects.filter(date=day, hour=hour, room=room)}
+    return {'talks': Talk.objects.filter(date=day, hour=hour, minute=minute, room=room)}
 
 @register.inclusion_tag('tags/display_talks.html')
 def display_talks_next_hour(day, next_hour):
