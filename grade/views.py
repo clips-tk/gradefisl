@@ -9,7 +9,7 @@ from datetime import datetime, date
 from django.db.models import Q
 
 # fisl
-from grade.models import Room, Area, Zone, Author, Talk
+from grade.models import Room, Zone, Author, Talk
 
 
 class IndexView(TemplateView):
