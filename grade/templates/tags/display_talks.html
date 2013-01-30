@@ -14,7 +14,6 @@
     </ul>
     <p><strong>Sala:</strong> <a href="{% url grade:room talk.room.id %}">{{ talk.room }}</a></p>
     <p><strong>Trilha:</strong> <a href="{% url grade:zone talk.zone.id %}">{{ talk.zone }}</a></p>
-    <p><strong>&Aacute;rea:</strong> {{ talk.area }}</p>
     <!--p><a href="{% url grade:talk talk.id %}">Mais informa&ccedil;&otildes;es</a></p-->
   </div>
 {% endfor %}

@@ -91,10 +91,14 @@ class NowListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(NowListView, self).get_context_data(**kwargs)
 
+        now = datetime.now()
+        hours = Talk.objects.filter(date=now.date, hour=now.hour).values_list('hour', 'minute').distinct().order_by('hour', 'minute')
+        next_hour = Talk.objects.filter(date=now.date, hour=now.hour + 1).values_list('hour', 'minute').distinct().order_by('hour', 'minute')
+
         context['user'] = self.request.user
         context['day'] = date.today()
-        context['hour'] = datetime.now().hour
-        context['next_hour'] = datetime.now().hour + 1
+        context['hours'] = hours
+        context['next_hour'] = next_hour
 
         return context
 
