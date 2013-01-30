@@ -137,6 +137,7 @@ class SearchTalkListView(ListView):
         if self.query:
             qset = (
                 Q(title__icontains=self.query) |
+                Q(abstract__icontains=self.query) |
                 Q(authors__name__icontains=self.query)
             )
             context['talks'] = Talk.objects.filter(qset).order_by('date', 'hour').distinct()
