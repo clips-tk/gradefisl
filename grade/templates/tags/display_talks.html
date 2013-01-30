@@ -4,14 +4,15 @@
     <p><strong>{{ talk.title }}</strong></p>
     <p>{{ talk.abstract }}</p>
     <!-- TODO: verify plural/singular -->
-    <p><strong>Palestrantes:</strong></p>
-    <ul>
-    {% for author in talk.authors.all %}
-      <li>{{ author.name }}</li>
-    {% empty %}
-      <li>Nenhum palestrante.</li>
-    {% endfor %}
-    </ul>
+    <!-- Disabled because campus party data has not authors information -->
+<!--    <p><strong>Palestrantes:</strong></p>-->
+<!--    <ul>-->
+<!--    {% for author in talk.authors.all %}-->
+<!--      <li>{{ author.name }}</li>-->
+<!--    {% empty %}-->
+<!--      <li>Nenhum palestrante.</li>-->
+<!--    {% endfor %}-->
+<!--    </ul>-->
     <p><strong>Sala:</strong> <a href="{% url grade:room talk.room.id %}">{{ talk.room }}</a></p>
     <p><strong>Trilha:</strong> <a href="{% url grade:zone talk.zone.id %}">{{ talk.zone }}</a></p>
     <!--p><a href="{% url grade:talk talk.id %}">Mais informa&ccedil;&otildes;es</a></p-->
