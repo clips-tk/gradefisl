@@ -7,7 +7,7 @@
       <p>{{ talk.abstract }}</p>
 
       {% if user.is_authenticated %}
-        <a href="{% url grade:choice_talk talk.id %}">Eu Vou!</a>
+        <a href="{% url 'grade:choice_talk' talk.id %}">Eu Vou!</a>
         <g:plusone></g:plusone>
         <br /><br />
       {% endif %}
@@ -16,7 +16,7 @@
         <legend>Palestrantes</legend>
         <ul>
           {% for author in talk.authors.all %}
-            <li><a href="{% url grade:author author.id %}">{{ author.name }}</a></li>
+            <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>
           {% empty %}
             Nenhum palestrante.
           {% endfor %}
@@ -43,7 +43,7 @@
 
       <br /><br />
 
-      <a data-rel="back" data-direction="reverse" href="{% url grade:talks %}">Voltar</a>
+      <a data-rel="back" data-direction="reverse" href="{% url 'grade:talks' %}">Voltar</a>
     </div>
   </div>
 {% endblock content %}

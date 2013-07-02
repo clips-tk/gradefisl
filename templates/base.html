@@ -32,7 +32,7 @@
   <div data-role="page" data-theme="a">
     <div data-role="header">
       <h1>
-        <a title="Página inicial" href="{% url grade:index %}">
+        <a title="Página inicial" href="{% url 'grade:index' %}">
           <img id="logo-fisl" src="{{ STATIC_URL }}images/clips-logo.png" alt="Logo FISL" />
         </a>
       </h1>
@@ -40,9 +40,9 @@
     {% endblock %}
     <!--
     {% if user.is_authenticated %}
-    <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url twitterauth:logout %}">Logout</a>
+    <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url 'twitterauth:logout' %}">Logout</a>
     {% else %}
-    <p><a href="{% url twitterauth:login %}" rel="external">Login</a></p>
+    <p><a href="{% url 'twitterauth:login' %}" rel="external">Login</a></p>
     {% endif %}
     -->
     {% block content %}
