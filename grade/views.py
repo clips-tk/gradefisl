@@ -203,10 +203,10 @@ def gerar_zones(json):
 
 def gerar_authors(json):
     for author in json['authors']:
-        if not Author.objects.filter(uid=author['author_id']).count():
-            Author.objects.create(uid=author['author_id'],
-                                  candidate=author['candidate'],
-                                  name=author['name'])
+#        if not Author.objects.filter(uid=author['author_id']).count():
+        Author.objects.create(uid=author['author_id'],
+                              candidate=author['candidate'],
+                              name=author['name'])
 
 
 def gerar_talks(json):
