@@ -120,7 +120,7 @@ class DayTalkListView(ListView):
 
 
 class SearchTalkListView(ListView):
-    """ View utilizada para mostrar as palestras por dia"""
+    """ View que gera o resultado da busca """
 
     template_name = "grade/search_talk_list.html"
 
