@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url
 from views import TalkListView, TalkDetailView, IndexView, AuthorDetailView, ZoneDetailView, RoomDetailView, NowListView, DayTalkListView, AboutView, SearchTalkListView
 from django.views.generic import ListView
 from grade.models import Zone, Room, Talk
