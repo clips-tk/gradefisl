@@ -1,10 +1,10 @@
 # What is gradefisl?
 
-_gradefisl_ is a Django powered website that creates a mobile interface to the [FISL](http://softwarelivre.org/fisl13) programme. gradefisl can be used with another events that uses _papers-ng_ software.
+_gradefisl_ is a Django powered website that creates a mobile interface to the [FISL](http://softwarelivre.org/fisl14) programme. gradefisl can be used with another events that uses _papers-ng_ software.
 
 _gradefisl_ é um sistema em Django que cria interface mobile para a grade de programação do FISL, mas que pode ser utilizado com qualquer outro evento que utilize o software _papers-ng_ para organizar a grade de programação.
 
-Access a demo at http://vs1061.rosehosting.com:8000/
+Access a demo at http://clips.tk
 
 
 # Installation instructions
@@ -19,7 +19,7 @@ Access a demo at http://vs1061.rosehosting.com:8000/
 * django-nose>=0.1.3
 * rednose>=0.2.4
 
-You can install these packages using `easy_install`.
+You can install these packages using `easy_install` or `PIP`.
 
 
 ## Run and develop!
@@ -35,3 +35,7 @@ So start a development server:
     python2 manage.py runserver
 
 Access http://127.0.0.1:8000/gerar_grade in your browser to populate the database. It will take some time... be patient! After it, access http://127.0.0.1:8000/ to navigate on the system.
+
+## License
+
+MIT License
