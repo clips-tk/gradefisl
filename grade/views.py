@@ -9,7 +9,7 @@ from datetime import datetime, date
 from django.db.models import Q
 
 # fisl
-from grade.models import Room, Area, Zone, Author, Talk
+from grade.models import Room, Zone, Author, Talk
 
 
 class IndexView(TemplateView):
@@ -133,7 +133,7 @@ class SearchTalkListView(ListView):
         if self.query:
             qset = (
                 Q(title__icontains=self.query) |
-                Q(abstract__icontains=self.query) | 
+                Q(abstract__icontains=self.query) |
                 Q(authors__name__icontains=self.query)
             )
             context['talks'] = Talk.objects.filter(qset).order_by('date', 'hour').distinct()
