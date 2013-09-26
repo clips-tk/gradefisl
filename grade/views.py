@@ -34,7 +34,8 @@ class TalkListView(TemplateView):
         context = super(TalkListView, self).get_context_data(**kwargs)
 
         days = Talk.objects.dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(10, 20))
+        hours = ['8:50', '9:30', '10:10', '11:10', '11:50', '12:30', '14:00',
+             '15:10', '15:50', '16:40', '17:20']
 
         context['user'] = self.request.user
         context['days'] = days
@@ -53,7 +54,8 @@ class ZoneDetailView(DetailView):
         context = super(ZoneDetailView, self).get_context_data(**kwargs)
 
         days = self.get_object().talk_set.all().dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(10, 20))
+        hours = ['8:50', '9:30', '10:10', '11:10', '11:50', '12:30', '14:00',
+             '15:10', '15:50', '16:40', '17:20']
 
         context['zone'] = self.get_object()
         context['user'] = self.request.user
@@ -73,7 +75,8 @@ class RoomDetailView(DetailView):
         context = super(RoomDetailView, self).get_context_data(**kwargs)
 
         days = self.get_object().talk_set.all().dates("date", "day")
-        hours = map(lambda x: str(x).zfill(2), range(10, 20))
+        hours = ['8:50', '9:30', '10:10', '11:10', '11:50', '12:30', '14:00',
+             '15:10', '15:50', '16:40', '17:20']
 
         context['zone'] = self.get_object()
         context['user'] = self.request.user
@@ -110,7 +113,8 @@ class DayTalkListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(DayTalkListView, self).get_context_data(**kwargs)
 
-        hours = map(lambda x: str(x).zfill(2), range(10, 20))
+        hours = ['8:50', '9:30', '10:10', '11:10', '11:50', '12:30', '14:00',
+             '15:10', '15:50', '16:40', '17:20']
 
         context['user'] = self.request.user
         context['days'] = [self.date_url]
@@ -136,7 +140,7 @@ class SearchTalkListView(ListView):
                 Q(abstract__icontains=self.query) |
                 Q(authors__name__icontains=self.query)
             )
-            context['talks'] = Talk.objects.filter(qset).order_by('date', 'hour').distinct()
+            context['talks'] = Talk.objects.filter(qset).order_by('date').distinct()
         else:
             context['talks'] = []
 
