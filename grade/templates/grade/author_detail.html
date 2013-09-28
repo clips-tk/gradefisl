@@ -4,13 +4,15 @@
   <div data-role="content">
     <h2>{{ author.name }}</h2>
 
+    <p>{{ author.bio }}</p>
+
     <h3>Palestras:</h3>
     {% for talk in author.talk_set.all %}
       <div data-role="collapsible" data-collapsed="true">
         <h3>{{ talk.title }}</h3>
         <p><strong>{{ talk.title }}</strong></p>
         <p>{{ talk.abstract }}</p>
-        <p>Palestrantes:</p>
+        <p><strong>Palestrantes:</strong></p>
         <ul>
           {% for author in talk.authors.all %}
             <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>
@@ -18,9 +20,9 @@
             Nenhum palestrante.
           {% endfor %}
         </ul>
-        <p><strong>Data:</strong> {{ talk.date|date:"d \d\e F" }} - {{ talk.hour }}:00</p>
+        <p><strong>Data:</strong> {{ talk.date|date:"d \d\e F - G:i" }}</p>
         <p><strong>Local:</strong> <a href="{% url 'grade:zone' talk.room.id %}">Sala {{ talk.room }}</a></p>
-        <p><strong>Trilha / Área:</strong> <a href="{% url 'grade:zone' talk.zone.id %}">{{ talk.zone }}</a> / {{ talk.area }}</p>
+        <p><strong>Trilha:</strong> <a href="{% url 'grade:zone' talk.zone.id %}">{{ talk.zone }}</a></p>
         <!--p><a href="{% url 'grade:talk' talk.id %}">Mais informações</a></p-->
       </div>
       {% empty %}
