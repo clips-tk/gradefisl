@@ -34,6 +34,7 @@ class Talk(models.Model):
     authors = models.ManyToManyField('Author')
     room = models.ForeignKey(Room)
     zone = models.ForeignKey(Zone)
+    language = models.CharField(max_length=5, null=True, blank=True)
     listeners = models.ManyToManyField(User, null=True, blank=True)
 
     def __unicode__(self):
