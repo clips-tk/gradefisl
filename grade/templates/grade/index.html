@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load grade_tags %}
-{% block content %}
 
+{% block content %}
 <div data-role="content">
+  <a name="busca"></a>
   <form action="/busca/" method="get">
-    <input type="search" name="search" id="search-basic" value="" placeholder="Busca"/>
+    <input type="search" name="search" id="search-basic" value="" placeholder="Busca" />
+    <input type="submit" class="hiddenStructure" />
   </form>
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
     <li data-role="list-divider">Programa&ccedil;&atilde;o</li>
@@ -13,12 +15,10 @@
     <li><a href="salas/">Por Sala</a></li>
     <li><a href="trilhas/">Por Trilha</a></li>
   </ul>
-
   <ul data-role="listview" data-inset="true">
-    <li><a href="sobre/">Sobre o Clips</a></li>
+    <li><a href="sobre/">Sprint Clips!</a></li>
     <li><a href="http://www.pythonbrasil.org.br/">Site oficial PythonBrasil</a></li>
     <li><a href="http://www.ploneconf.org/">Site oficial PloneConf</a></li>
   </ul>
 </div>
-
 {% endblock %}

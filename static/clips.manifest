@@ -1,27 +1,27 @@
 {
   "version": "2.0",
   "name": "Clips",
-  "description": "A grade de programação do FISL para dispositivos móveis!",
+  "description": "Programação de eventos para dispositivos móveis.",
   "icons": {
     "16": "/images/clips-16.png",
     "48": "/images/clips-48.png",
     "128": "/images/clips-128.png"
   },
   "developer": {
-    "name": "Wille Marcel, Davi Lima, Valessio Brito",
-    "url": "https://github.com/willemarcel/gradefisl"
+    "name": "Wille Marcel",
+    "url": "https://github.com/clips-tk/gradefisl"
   },
   "installs_allowed_from": ["*"],
   "appcache_path": "/cache.manifest",
   "locales": {
     "en": {
-      "description": "The FISL programme adapted to mobile devices",
+      "description": "Event schedule for mobile devices",
       "developer": {
         "url": "http://clips.tk/"
       }
     },
     "es": {
-      "description": "La programación del FISL para dispositivos móbiles",
+      "description": "La programación de eventos para dispositivos móbiles",
       "developer": {
         "url": "http://clips.tk/"
       }

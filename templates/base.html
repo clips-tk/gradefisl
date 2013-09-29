@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html manifest="{{ STATIC_URL }}clips.manifest">
+<html lang="pt-br" dir="ltr" manifest="{{ STATIC_URL }}clips.manifest">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clips, o evento em seu bolso</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}images/favicon.ico">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/flat.min.css" />
+  <link rel="stylesheet" href="code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
   <link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css" />
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
   <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
   <script src="//code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
   {% block extra_style %}
   {% endblock %}
-  <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-33609396-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  </script>
 </head>
 <body>
-  {% block header %}
+  <ul id="accessibility" class="hiddenStructure">
+    <li><a accesskey="1" href="#conteudo">Ir para o conteúdo</a></li>
+    <li><a accesskey="2" href="#busca">Ir para a busca</a></li>
+  </ul>
   <div data-role="page" data-theme="c">
+    {% block header %}
     <div data-role="header">
       <h1>
         <a title="Página inicial" href="{% url 'grade:index' %}">
@@ -36,19 +28,22 @@
       </h1>
     </div>
     {% endblock %}
-    <!--
-    {% if user.is_authenticated %}
-    <p>Logged as {{ user}}&nbsp;|&nbsp;<a href="{% url 'twitterauth:logout' %}">Logout</a>
-    {% else %}
-    <p><a href="{% url 'twitterauth:login' %}" rel="external">Login</a></p>
-    {% endif %}
-    -->
+    <a name="conteudo"></a>
     {% block content %}
     {% endblock %}
-
     <div data-role="footer">
       <p>Clips, o evento em seu bolso.</p>
     </div>
   </div>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33609396-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
 </body>
 </html>
