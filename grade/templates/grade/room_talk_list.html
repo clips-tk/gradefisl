@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% load grade_tags %}
 
 {% block content %}
@@ -9,7 +8,6 @@
       <div data-role="collapsible" data-collapsed="true">
         <h2>{{ day|date:"d \d\e F" }}</h2>
           {% for hour in hours %}
-
             {% display_talks_room day hour room %}
           {% endfor %}
       </div>

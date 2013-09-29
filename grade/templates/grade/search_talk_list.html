@@ -2,25 +2,23 @@
 
 {% block content %}
   <div data-role="content">
-
     <h2>Busca</h2>
+    <a name="busca"></a>
     <form action="/busca/" method="get">
       <input type="search" name="search" id="search-basic" value="" placeholder="Busque por tema ou palestrante"/>
+      <input type="submit" class="hiddenStructure" />
     </form>
-
     {% if query %}
-
       <p>Você buscou por <strong>{{ query }}</strong>.</p>
-
       {% for talk in talks %}
         <div data-role="collapsible" data-collapsed="true">
           <h3>{{ talk.title }}</h3>
           <p><strong>{{ talk.title }}</strong></p>
           <p>{{ talk.abstract }}</p>
-          <p><strong>Palestrantes:</strong></p>
+          <p><strong>Palestrante{{ talk.authors.all|pluralize }}:</strong></p>
           <ul>
           {% for author in talk.authors.all %}
-            <li>{{ author.name }}</li>
+            <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>
           {% empty %}
             Nenhum palestrante.
           {% endfor %}
@@ -33,8 +31,6 @@
       {% empty %}
         Nenhuma palestra encontrada.
       {% endfor %}
-
     {% endif %}
-
   </div>
 {% endblock content %}

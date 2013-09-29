@@ -13,7 +13,7 @@
       {% endif %}
 
       <fieldset>
-        <legend>Palestrantes</legend>
+        <legend>Palestrante{{ talk.authors.all|pluralize }}:</legend>
         <ul>
           {% for author in talk.authors.all %}
             <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>

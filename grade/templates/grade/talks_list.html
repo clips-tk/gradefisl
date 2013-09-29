@@ -1,15 +1,13 @@
 {% extends "base.html" %}
-
 {% load grade_tags %}
 
 {% block content %}
-
   <div data-role="content">
     {% for day in days %}
     <div data-role="collapsible-set">
       <h2>{{ day|date:"d \d\e F" }}</h2>
       {% for hour in hours %}
-          {% display_talks day hour %}
+        {% display_talks day hour %}
       {% endfor %}
     </div>
   {% endfor %}

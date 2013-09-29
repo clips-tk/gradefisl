@@ -4,9 +4,8 @@
       <div data-role="collapsible" data-collapsed="true">
         <h3>{{ talk.title }}</h3>
         <p><strong>{{ talk.title }}</strong></p>
-        <p>{{ talk.abstract }}</p>
-        <!-- TODO: verify plural/singular -->
-        <p><strong>Palestrantes:</strong></p>
+        <p>{{ talk.abstract|safe }}</p>
+        <p><strong>Palestrante{{ talk.authors.all|pluralize }}:</strong></p>
         <ul>
         {% for author in talk.authors.all %}
           <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>

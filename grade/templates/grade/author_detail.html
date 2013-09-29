@@ -3,16 +3,14 @@
 {% block content %}
   <div data-role="content">
     <h2>{{ author.name }}</h2>
-
     <p>{{ author.bio }}</p>
-
-    <h3>Palestras:</h3>
+    <h3>Palestra{{ author.talk_set.all|pluralize }}:</h3>
     {% for talk in author.talk_set.all %}
       <div data-role="collapsible" data-collapsed="true">
         <h3>{{ talk.title }}</h3>
         <p><strong>{{ talk.title }}</strong></p>
         <p>{{ talk.abstract }}</p>
-        <p><strong>Palestrantes:</strong></p>
+        <p><strong>Palestrante{{ talk.authors.all|pluralize }}:</strong></p>
         <ul>
           {% for author in talk.authors.all %}
             <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>
