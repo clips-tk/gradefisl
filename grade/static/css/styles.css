@@ -46,3 +46,7 @@
   margin: -1px 0 0 -1px;
   width: 1px;
 }
+
+.ui-submit {
+  display: none;
+}
