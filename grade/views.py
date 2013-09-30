@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView, TemplateView, ListView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from django.db.models import Q
 
 # fisl
@@ -87,7 +87,7 @@ class RoomDetailView(DetailView):
 
 
 class NowListView(TemplateView):
-    """ View utilizada para mostrar as próximas palestras da grade """
+    """ View utilizada para mostrar as palestras acontecendo agora e as da próxima sessão """
 
     template_name = "grade/now_talk_list.html"
 
@@ -95,9 +95,9 @@ class NowListView(TemplateView):
         context = super(NowListView, self).get_context_data(**kwargs)
 
         context['user'] = self.request.user
-        context['day'] = date.today()
-        context['hour'] = datetime.now().hour
-        context['next_hour'] = datetime.now().hour + 1
+        context['now'] = datetime.now()
+        context['last_session'] = datetime.now() - timedelta(minutes=40)
+        context['next_session'] = datetime.now() + timedelta(minutes=40)
 
         return context
 
