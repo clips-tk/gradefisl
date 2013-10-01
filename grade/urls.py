@@ -32,6 +32,8 @@ urlpatterns = patterns('grade.views',
     url(r'^agora/$', NowListView.as_view(), name='now'),
     url(r'^sobre/$', AboutView.as_view(), name='about'),
     url(r'^busca/$', SearchTalkListView.as_view()),
-    url(r'^code/$', RedirectView.as_view(url='https://github.com/willemarcel/gradefisl'), name='code'),
+    url(r'^code/$', RedirectView.as_view(
+        url='https://github.com/clips-tk/gradefisl'),
+        name='code'),
 
 )
