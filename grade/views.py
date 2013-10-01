@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView, TemplateView, ListView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from datetime import datetime, date, timedelta
+from datetime import datetime, timedelta
 from django.db.models import Q
 
 # fisl
@@ -13,20 +13,20 @@ from grade.models import Room, Zone, Author, Talk
 
 
 class IndexView(TemplateView):
-    """ View da homepage """
+    """ Homepage view """
 
     template_name = "grade/index.html"
 
 
 class TalkDetailView(DetailView):
-    """ View utilizada para mostrar a palestra """
+    """ View that shows Talk details """
 
     model = Talk
     context_object_name = 'talk'
 
 
 class TalkListView(TemplateView):
-    """ View utilizada para mostrar as palestras """
+    """ Show the Talks grouped by date and hour """
 
     template_name = "grade/talks_list.html"
 
@@ -45,7 +45,7 @@ class TalkListView(TemplateView):
 
 
 class ZoneDetailView(DetailView):
-    """ View utilizada para mostrar as palestras por trilha """
+    """ Show talks grouped by Zone """
 
     model = Zone
     template_name = "grade/zone_talk_list.html"
@@ -66,7 +66,7 @@ class ZoneDetailView(DetailView):
 
 
 class RoomDetailView(DetailView):
-    """ View utilizada para mostrar as palestras por sala """
+    """ Show talks grouped by Room """
 
     model = Room
     template_name = "grade/room_talk_list.html"
@@ -87,7 +87,7 @@ class RoomDetailView(DetailView):
 
 
 class NowListView(TemplateView):
-    """ View utilizada para mostrar as palestras acontecendo agora e as da próxima sessão """
+    """ Show talks happening now and the talks of the next session """
 
     template_name = "grade/now_talk_list.html"
 
@@ -103,7 +103,7 @@ class NowListView(TemplateView):
 
 
 class DayTalkListView(ListView):
-    """ View utilizada para mostrar as palestras por dia"""
+    """ Show talks of the selected day """
 
     template_name = "grade/talks_list.html"
 
@@ -124,7 +124,7 @@ class DayTalkListView(ListView):
 
 
 class SearchTalkListView(ListView):
-    """ View que gera o resultado da busca """
+    """ Search Talks by title, abstract and authors name """
 
     template_name = "grade/search_talk_list.html"
 
@@ -151,14 +151,14 @@ class SearchTalkListView(ListView):
 
 
 class AuthorDetailView(DetailView):
-    """ View utilizada para mostrar o autor e sua lista de palestras """
+    """ Show the details of an author """
 
     model = Author
     context_object_name = 'author'
 
 
 class AboutView(TemplateView):
-    """ View da página Sobre """
+    """ View of the About page """
 
     template_name = "grade/about.html"
 
@@ -166,7 +166,7 @@ class AboutView(TemplateView):
 def clean_data():
     """ Clean the grade models """
 
-    grade_models = [Room, Area, Talk, Zone, Author]
+    grade_models = [Room, Talk, Zone, Author]
     clear_data = lambda x: x.objects.all().delete()
 
     for grade_model in grade_models:
@@ -194,12 +194,6 @@ def gerar_rooms(json):
                                 position=room['position'])
 
 
-def gerar_areas(json):
-    for area in json['areas']:
-        if not Area.objects.filter(uid=area['area_id']).count():
-            Area.objects.create(uid=area['area_id'], name=area['name'])
-
-
 def gerar_zones(json):
     for zone in json['zones']:
         if not Zone.objects.filter(uid=zone['zone_id']).count():
@@ -215,15 +209,13 @@ def gerar_authors(json):
 
 
 def gerar_talks(json):
-    gerar_areas(json)
     gerar_rooms(json)
     gerar_zones(json)
     gerar_authors(json)
 
     for talk in json['talks']:
         if not Talk.objects.filter(area=talk['area_id']).count():
-            t = Talk(area=Area.objects.get(uid=talk['area_id']),
-                     room=Room.objects.get(uid=talk['room_id']),
+            t = Talk(room=Room.objects.get(uid=talk['room_id']),
                      zone=Zone.objects.get(uid=talk['zone_id']),
                      level=talk['level'],
                      hour=talk['hour'],
