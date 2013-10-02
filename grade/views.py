@@ -1,5 +1,7 @@
 # coding: utf-8
 
+import os
+
 from django.utils import simplejson
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView, TemplateView, ListView
@@ -10,6 +12,7 @@ from django.db.models import Q
 
 # fisl
 from grade.models import Room, Area, Zone, Author, Talk
+import settings
 
 
 class IndexView(TemplateView):
@@ -237,7 +240,7 @@ def gerar_talks(json):
 
 
 def gerar_grade(request):
-    data_json = open("public/json/data.json", "r").read()
+    data_json = open(os.path.join(settings.PROJECT_ROOT, "public/json/data.json"), "r").read()
     json = simplejson.loads(data_json)
 
     gerar_talks(json)
