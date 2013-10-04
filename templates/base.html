@@ -1,9 +1,11 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr" manifest="{{ STATIC_URL }}clips.manifest">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clips, o evento em seu bolso</title>
+  <title>{% trans "Clips, the event in your pocket" %}</title>
   <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}images/favicon.ico">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/flat.min.css" />
   <link rel="stylesheet" href="//code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
@@ -15,14 +17,14 @@
 </head>
 <body>
   <ul id="accessibility" class="hiddenStructure">
-    <li><a accesskey="1" href="#conteudo">Ir para o conteúdo</a></li>
-    <li><a accesskey="2" href="#busca">Ir para a busca</a></li>
+    <li><a accesskey="1" href="#conteudo">{% trans "Go to content" %}</a></li>
+    <li><a accesskey="2" href="#busca">{% trans "Go to search" %}</a></li>
   </ul>
   <div data-role="page" data-theme="c">
     {% block header %}
     <div data-role="header">
       <h1>
-        <a title="Página inicial" href="{% url 'grade:index' %}">
+        <a title="{% trans "Homepage" %}" href="{% url 'grade:index' %}">
           <img id="logo-clips" src="{{ STATIC_URL }}images/clips-logo.png" alt="Logo Clips" />
         </a>
       </h1>
@@ -32,7 +34,7 @@
     {% block content %}
     {% endblock %}
     <div data-role="footer">
-      <p>Clips, o evento em seu bolso.</p>
+      <p>{% trans "Clips, the event in your pocket." %}</p>
     </div>
   </div>
   <script type="text/javascript">

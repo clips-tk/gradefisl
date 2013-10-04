@@ -1,24 +1,25 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load grade_tags %}
 
 {% block content %}
 <div data-role="content">
   <a name="busca"></a>
   <form action="/busca/" method="get">
-    <input type="search" name="search" id="search-basic" value="" placeholder="Busca" />
+    <input type="search" name="search" id="search-basic" value="" placeholder="{% trans "Search" %}" />
     <input type="submit" />
   </form>
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
-    <li data-role="list-divider">Programa&ccedil;&atilde;o</li>
-    <li><a href="agora/">Agora!</a></li>
-    <li><a href="dia/">Por Dia</a></li>
-    <li><a href="salas/">Por Sala</a></li>
-    <li><a href="trilhas/">Por Trilha</a></li>
+    <li data-role="list-divider">{% trans "Schedule" %}</li>
+    <li><a href="agora/">{% trans "Now!" %}</a></li>
+    <li><a href="dia/">{% trans "By Day" %}</a></li>
+    <li><a href="salas/">{% trans "By Room" %}</a></li>
+    <li><a href="trilhas/">{% trans "By Track" %}</a></li>
   </ul>
   <ul data-role="listview" data-inset="true">
-    <li><a href="sobre/">Sprint Clips!</a></li>
-    <li><a href="http://www.pythonbrasil.org.br/">Site oficial PythonBrasil</a></li>
-    <li><a href="http://www.ploneconf.org/">Site oficial PloneConf</a></li>
+    <li><a href="sobre/">{% trans "Sprint Clips!" %}</a></li>
+    <li><a href="http://www.pythonbrasil.org.br/">{% trans "PythonBrasil Official Site" %}</a></li>
+    <li><a href="http://www.ploneconf.org/">{% trans "PloneConf Official Site" %}</a></li>
   </ul>
 </div>
 {% endblock %}

@@ -1,3 +1,5 @@
+{% load i18n %}
+
 {% if talks %}
     <h3 data-role="list-divider">{{ hour }}</h3>
     {% for talk in talks %}
@@ -5,16 +7,16 @@
         <h3>{{ talk.title }}</h3>
         <p><strong>{{ talk.title }}</strong></p>
         <p>{{ talk.abstract|safe }}</p>
-        <p><strong>Palestrante{{ talk.authors.all|pluralize }}:</strong></p>
+        <p><strong>{% trans "Speaker" %}{{ talk.authors.all|pluralize }}:</strong></p>
         <ul>
         {% for author in talk.authors.all %}
           <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>
         {% empty %}
-          <li>Nenhum palestrante.</li>
+          <li>{% trans "No speakers found" %}</li>
         {% endfor %}
         </ul>
-        <p><strong>Sala:</strong> <a href="{% url 'grade:room' talk.room.id %}">{{ talk.room }}</a></p>
-        <p><strong>Trilha:</strong> <a href="{% url 'grade:zone' talk.zone.id %}">{{ talk.zone }}</a></p>
+        <p><strong>{% trans "Room:" %}</strong> <a href="{% url 'grade:room' talk.room.id %}">{{ talk.room }}</a></p>
+        <p><strong>{% trans "Track:" %}</strong> <a href="{% url 'grade:zone' talk.zone.id %}">{{ talk.zone }}</a></p>
       </div>
     {% endfor %}
 {% endif %}

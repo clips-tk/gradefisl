@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-03 17:28-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: grade/templates/grade/author_detail.html:8
+msgid "Talk"
+msgstr "Palestra"
+
+#: grade/templates/grade/author_detail.html:14
+#: grade/templates/grade/search_talk_list.html:19
+#: grade/templates/tags/display_talks.html:10
+msgid "Speaker"
+msgstr "Palestrante"
+
+#: grade/templates/grade/author_detail.html:19
+#: grade/templates/grade/search_talk_list.html:24
+#: grade/templates/tags/display_talks.html:15
+msgid "No speakers found"
+msgstr "Nenhum palestrante"
+
+#: grade/templates/grade/author_detail.html:22
+#: grade/templates/grade/search_talk_list.html:27
+msgid "Date:"
+msgstr "Data:"
+
+#: grade/templates/grade/author_detail.html:23
+#: grade/templates/grade/search_talk_list.html:28
+#: grade/templates/tags/display_talks.html:18
+msgid "Room:"
+msgstr "Sala:"
+
+#: grade/templates/grade/author_detail.html:24
+#: grade/templates/grade/search_talk_list.html:29
+#: grade/templates/tags/display_talks.html:19
+msgid "Track:"
+msgstr "Trilha:"
+
+#: grade/templates/grade/author_detail.html:28
+#: grade/templates/grade/search_talk_list.html:33
+msgid "No talks found"
+msgstr "Nenhuma palestra encontrada"
+
+#: grade/templates/grade/days_list.html:8
+msgid "Schedule by day"
+msgstr "Programação por dia"
+
+#: grade/templates/grade/index.html:9
+#: grade/templates/grade/search_talk_list.html:6
+msgid "Search"
+msgstr "Busca"
+
+#: grade/templates/grade/index.html:13
+msgid "Schedule"
+msgstr "Programação"
+
+#: grade/templates/grade/index.html:14
+msgid "Now!"
+msgstr "Agora!"
+
+#: grade/templates/grade/index.html:15
+msgid "By Day"
+msgstr "Por Dia"
+
+#: grade/templates/grade/index.html:16
+msgid "By Room"
+msgstr "Por Sala"
+
+#: grade/templates/grade/index.html:17
+msgid "By Track"
+msgstr "Por Trilha"
+
+#: grade/templates/grade/index.html:20
+msgid "Sprint Clips!"
+msgstr "Sprint Clips!"
+
+#: grade/templates/grade/index.html:21
+msgid "PythonBrasil Official Site"
+msgstr "Site Oficial PythonBrasil"
+
+#: grade/templates/grade/index.html:22
+msgid "PloneConf Official Site"
+msgstr "Site Oficial PloneConf"
+
+#: grade/templates/grade/now_talk_list.html:8
+msgid "Happening Now"
+msgstr "Acontecendo Agora"
+
+#: grade/templates/grade/now_talk_list.html:12
+msgid "Next Session"
+msgstr "Próxima Sessão"
+
+#: grade/templates/grade/room_list.html:8
+msgid "Rooms"
+msgstr "Salas"
+
+#: grade/templates/grade/room_talk_list.html:7
+msgid "Schedule of the room"
+msgstr "Programação da sala"
+
+#: grade/templates/grade/search_talk_list.html:9
+msgid "Search for subject or speaker"
+msgstr "Busque por tema ou palestrante"
+
+#: grade/templates/grade/search_talk_list.html:13
+msgid "You searched for"
+msgstr "Você procurou por"
+
+#: grade/templates/grade/zone_list.html:8
+msgid "Tracks"
+msgstr "Trilhas"
+
+#: grade/templates/grade/zone_talk_list.html:7
+msgid "Schedule of the track"
+msgstr "Programação da trilha"
+
+#: templates/base.html:8
+msgid "Clips, the event in your pocket"
+msgstr "Clips, o evento em seu bolso"
+
+#: templates/base.html:20
+msgid "Go to content"
+msgstr "Ir para o conteúdo"
+
+#: templates/base.html:21
+msgid "Go to search"
+msgstr "Ir para a busca"
+
+#: templates/base.html:27
+msgid "Homepage"
+msgstr "Página Inicial"
+
+#: templates/base.html:37
+msgid "Clips, the event in your pocket."
+msgstr "Clips, o evento em seu bolso."

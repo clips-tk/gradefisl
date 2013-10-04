@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load grade_tags %}
 
 {% block content %}
   <div data-role="content">
-  <h2>Programação da trilha {{ zone.name }}</h2>
+  <h2>{% trans "Schedule of the track" %} {{ zone.name }}</h2>
   {% for day in days %}
     <div data-role="collapsible" data-collapsed="true">
       <h2>{{ day|date:"d \d\e F" }}</h2>
