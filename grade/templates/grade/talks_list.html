@@ -5,7 +5,7 @@
   <div data-role="content">
     {% for day in days %}
     <div data-role="collapsible-set">
-      <h2>{{ day|date:"d \d\e F" }}</h2>
+      <h2>{% block trans %}{{ day|date:"F d" }}{% endblock %}</h2>
       {% for hour in hours %}
         {% display_talks day hour %}
       {% endfor %}

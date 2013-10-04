@@ -7,7 +7,7 @@
     <h2>{% trans "Schedule of the room" %} {{ room.name }}</h2>
     {% for day in days %}
       <div data-role="collapsible" data-collapsed="true">
-        <h2>{{ day|date:"d \d\e F" }}</h2>
+        <h2>{% block trans %}{{ day|date:"F d" }}{% endblock %}</h2>
           {% for hour in hours %}
             {% display_talks_room day hour room %}
           {% endfor %}

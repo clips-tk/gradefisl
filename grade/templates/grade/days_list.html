@@ -7,7 +7,7 @@
     <ul data-role="listview" data-inset="true" data-dividertheme="e">
       <li data-role="list-divider" class="ui-bar-c">{% trans "Schedule by day" %}</li>
       {% for day in days %}
-        <li><a href="{{ forloop.counter0 }}/">{{ day|date:"d \d\e F" }}</a></li>
+        <li><a href="{{ forloop.counter0 }}/">{% block trans %}{{ day|date:"F d" }}{% endblock %}</a></li>
       {% endfor %}
     </ul>
   </div>
