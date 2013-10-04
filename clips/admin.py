@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from grade.models import Talk
-from grade.models import Room
-from grade.models import Author
-from grade.models import Zone
+from clips.models import Talk
+from clips.models import Room
+from clips.models import Author
+from clips.models import Zone
 
 
 class TalkAdmin(admin.ModelAdmin):

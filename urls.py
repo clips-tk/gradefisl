@@ -8,8 +8,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # grade
-    url(r'^', include('grade.urls', namespace='grade')),
+    # clips
+    url(r'^', include('clips.urls', namespace='clips')),
 
     # django twitter
     url(r'^', include('twitterauth.urls', namespace='twitterauth')),

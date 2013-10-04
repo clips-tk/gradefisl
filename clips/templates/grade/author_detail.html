@@ -13,15 +13,15 @@
         <p><strong>Palestrante{{ talk.authors.all|pluralize }}:</strong></p>
         <ul>
           {% for author in talk.authors.all %}
-            <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>
+            <li><a href="{% url 'clips:author' author.id %}">{{ author.name }}</a></li>
             {% empty %}
             Nenhum palestrante.
           {% endfor %}
         </ul>
         <p><strong>Data:</strong> {{ talk.date|date:"d \d\e F - G:i" }}</p>
-        <p><strong>Local:</strong> <a href="{% url 'grade:zone' talk.room.id %}">Sala {{ talk.room }}</a></p>
-        <p><strong>Trilha:</strong> <a href="{% url 'grade:zone' talk.zone.id %}">{{ talk.zone }}</a></p>
-        <!--p><a href="{% url 'grade:talk' talk.id %}">Mais informações</a></p-->
+        <p><strong>Local:</strong> <a href="{% url 'clips:zone' talk.room.id %}">Sala {{ talk.room }}</a></p>
+        <p><strong>Trilha:</strong> <a href="{% url 'clips:zone' talk.zone.id %}">{{ talk.zone }}</a></p>
+        <!--p><a href="{% url 'clips:talk' talk.id %}">Mais informações</a></p-->
       </div>
       {% empty %}
       Nenhuma palestra.

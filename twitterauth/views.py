@@ -66,7 +66,7 @@ def twitter_logout(request):
     # Log a user out using Django's logout function and redirect them
     # back to the homepage.
     logout(request)
-    return HttpResponseRedirect(reverse('grade:talks'))
+    return HttpResponseRedirect(reverse('clips:talks'))
 
 
 def twitter_authenticated(request):
@@ -125,4 +125,4 @@ def twitter_authenticated(request):
     if user is not None:
         login(request, user)
 
-    return HttpResponseRedirect(reverse('grade:talks'))
+    return HttpResponseRedirect(reverse('clips:talks'))

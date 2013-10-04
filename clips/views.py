@@ -9,13 +9,13 @@ from datetime import datetime, timedelta
 from django.db.models import Q
 
 # fisl
-from grade.models import Room, Zone, Author, Talk
+from clips.models import Room, Zone, Author, Talk
 
 
 class IndexView(TemplateView):
     """ Homepage view """
 
-    template_name = "grade/index.html"
+    template_name = "clips/index.html"
 
 
 class TalkDetailView(DetailView):
@@ -28,7 +28,7 @@ class TalkDetailView(DetailView):
 class TalkListView(TemplateView):
     """ Show the Talks grouped by date and hour """
 
-    template_name = "grade/talks_list.html"
+    template_name = "clips/talks_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(TalkListView, self).get_context_data(**kwargs)
@@ -48,7 +48,7 @@ class ZoneDetailView(DetailView):
     """ Show talks grouped by Zone """
 
     model = Zone
-    template_name = "grade/zone_talk_list.html"
+    template_name = "clips/zone_talk_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(ZoneDetailView, self).get_context_data(**kwargs)
@@ -69,7 +69,7 @@ class RoomDetailView(DetailView):
     """ Show talks grouped by Room """
 
     model = Room
-    template_name = "grade/room_talk_list.html"
+    template_name = "clips/room_talk_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(RoomDetailView, self).get_context_data(**kwargs)
@@ -89,7 +89,7 @@ class RoomDetailView(DetailView):
 class NowListView(TemplateView):
     """ Show talks happening now and the talks of the next session """
 
-    template_name = "grade/now_talk_list.html"
+    template_name = "clips/now_talk_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(NowListView, self).get_context_data(**kwargs)
@@ -105,7 +105,7 @@ class NowListView(TemplateView):
 class DayTalkListView(ListView):
     """ Show talks of the selected day """
 
-    template_name = "grade/talks_list.html"
+    template_name = "clips/talks_list.html"
 
     def get_queryset(self):
         self.date_url = Talk.objects.dates("date", "day")[int(self.args[0])]
@@ -126,7 +126,7 @@ class DayTalkListView(ListView):
 class SearchTalkListView(ListView):
     """ Search Talks by title, abstract and authors name """
 
-    template_name = "grade/search_talk_list.html"
+    template_name = "clips/search_talk_list.html"
 
     def get_queryset(self):
         self.query = self.request.GET.get('search', '')
@@ -160,17 +160,17 @@ class AuthorDetailView(DetailView):
 class AboutView(TemplateView):
     """ View of the About page """
 
-    template_name = "grade/about.html"
+    template_name = "clips/about.html"
 
 
 def clean_data():
-    """ Clean the grade models """
+    """ Clean the clips models """
 
-    grade_models = [Room, Talk, Zone, Author]
+    clips_models = [Room, Talk, Zone, Author]
     clear_data = lambda x: x.objects.all().delete()
 
-    for grade_model in grade_models:
-        clear_data(grade_model)
+    for clips_model in clips_models:
+        clear_data(clips_model)
 
 
 @login_required
@@ -181,7 +181,7 @@ def choice_talk(request, talk_id):
         talk.listeners.add(request.user)
         talk.save()
 
-    return HttpResponseRedirect(reverse('grade:talk', args=[talk_id]))
+    return HttpResponseRedirect(reverse('clips:talk', args=[talk_id]))
 
 
 def gerar_rooms(json):
@@ -232,10 +232,10 @@ def gerar_talks(json):
             t.save()
 
 
-def gerar_grade(request):
+def gerar_clips(request):
     data_json = open("public/json/data.json", "r").read()
     json = simplejson.loads(data_json)
 
     gerar_talks(json)
 
-    return HttpResponse("Grade gerada com sucesso!")
+    return HttpResponse("clips gerada com sucesso!")

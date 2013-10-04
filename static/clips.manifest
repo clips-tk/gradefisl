@@ -9,7 +9,7 @@
   },
   "developer": {
     "name": "Wille Marcel",
-    "url": "https://github.com/clips-tk/gradefisl"
+    "url": "https://github.com/clips-tk/clipsfisl"
   },
   "installs_allowed_from": ["*"],
   "appcache_path": "/cache.manifest",
