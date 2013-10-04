@@ -1,0 +1,11 @@
+-r _base.txt
+django-extensions==1.2.0
+honcho==0.4.2
+fabric==1.7.0
+django-debug-toolbar==0.9.4
+django-debug-toolbar-template-timings==0.5.1
+django-dtpanel-htmltidy==0.1.1
+ipdb==0.7
+ipython==1.0.0
+flake8==2.0
+

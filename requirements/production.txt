@@ -1,0 +1,5 @@
+-r _base.txt
+dj-database-url==0.2.2
+gunicorn==18.0
+unicornherder==0.0.4
+raven==3.4.1
