@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr" manifest="{{ STATIC_URL }}clips.manifest">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@
     {% block header %}
     <div data-role="header">
       <h1>
-        <a title="{% trans "Homepage" %}" href="{% url 'grade:index' %}">
+        <a title="{% trans "Homepage" %}" href="{% url 'clips:index' %}">
           <img id="logo-clips" src="{{ STATIC_URL }}images/clips-logo.png" alt="Logo Clips" />
         </a>
       </h1>

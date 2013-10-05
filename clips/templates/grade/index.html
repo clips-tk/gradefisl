@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load grade_tags %}
+{% load clips_tags %}
 
 {% block content %}
 <div data-role="content">
   <a name="busca"></a>
   <form action="/busca/" method="get">
-    <input type="search" name="search" id="search-basic" value="" placeholder="{% trans "Search" %}" />
+    <input type="search" name="search" id="search-basic" value="" placeholder="Busca" />
     <input type="submit" />
   </form>
   <ul data-role="listview" data-inset="true" data-dividertheme="e">

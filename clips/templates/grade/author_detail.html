@@ -14,15 +14,15 @@
           <p><strong>{% trans "Speaker" %}{{ talk.authors.all|pluralize }}:</strong></p>
           <ul>
           {% for author in talk.authors.all %}
-            <li><a href="{% url 'grade:author' author.id %}">{{ author.name }}</a></li>
+            <li><a href="{% url 'clips:author' author.id %}">{{ author.name }}</a></li>
           {% empty %}
             {% trans "No speakers found" %}
           {% endfor %}
           </ul>
           <p><strong>{% trans "Date:" %}</strong> {% block trans %}{{ talk.date|date:"F d - G:i" }}{% endblock %}</p>
-          <p><strong>{% trans "Room:" %}</strong> <a href="{% url 'grade:room' talk.room.id %}">{{ talk.room }}</a></p>
-          <p><strong>{% trans "Track:" %}</strong> <a href="{% url 'grade:zone' talk.zone.id %}">{{ talk.zone }}</a></p>
-          <!--p><a href="{% url 'grade:talk' talk.id %}">Mais informações</a></p-->
+          <p><strong>{% trans "Room:" %}</strong> <a href="{% url 'clips:room' talk.room.id %}">{{ talk.room }}</a></p>
+          <p><strong>{% trans "Track:" %}</strong> <a href="{% url 'clips:zone' talk.zone.id %}">{{ talk.zone }}</a></p>
+          <!--p><a href="{% url 'clips:talk' talk.id %}">Mais informações</a></p-->
         </div>
       {% empty %}
         {% trans "No talks found" %}

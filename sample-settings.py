@@ -1,4 +1,4 @@
-# Django settings for minha_grade_fisl project.
+# Django settings for minha_clips_fisl project.
 import os
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_ROOT, 'minha_grade.db'),
+        'NAME': os.path.join(PROJECT_ROOT, 'minha_clips.db'),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -128,7 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'grade',
+    'clips',
     'twitterauth',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',

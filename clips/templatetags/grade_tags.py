@@ -4,7 +4,7 @@
 from django.template import Library
 
 # models
-from grade.models import Talk
+from clips.models import Talk
 
 # Habilitando o registro de novos filtros e tags
 register = Library()

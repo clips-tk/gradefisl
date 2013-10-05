@@ -3,10 +3,10 @@ from django.test.client import RequestFactory
 from django.utils import simplejson
 from django.core.urlresolvers import reverse
 
-from grade.views import gerar_rooms, gerar_areas, gerar_zones, gerar_authors
-from grade.views import gerar_talks, clean_data
+from clips.views import gerar_rooms, gerar_areas, gerar_zones, gerar_authors
+from clips.views import gerar_talks, clean_data
 
-from grade.models import Room, Area, Zone, Author, Talk
+from clips.models import Room, Area, Zone, Author, Talk
 
 from django.contrib.auth.models import User
 from twitterauth.models import Profile
@@ -20,8 +20,8 @@ class TestViews(TestCase):
         self.factory = RequestFactory()
 
         # we need an user
-        user = User.objects.create_user('gradefisl',
-                                'gradefisl@twitter.com',
+        user = User.objects.create_user('clipsfisl',
+                                'clipsfisl@twitter.com',
                                 'QZAx8IwvwpLOHGNDOTrIhSO3E5KyeOtb9UIrqJ9nyM')
 
         profile = Profile()
@@ -81,20 +81,20 @@ class TestViews(TestCase):
         user = User.objects.get(id=1)
 
         client = Client()
-        client.login(username='gradefisl',
+        client.login(username='clipsfisl',
                      password='QZAx8IwvwpLOHGNDOTrIhSO3E5KyeOtb9UIrqJ9nyM')
 
         # lets choice the talk
-        client.get(reverse('grade:choice_talk', args=[10]))
+        client.get(reverse('clips:choice_talk', args=[10]))
 
         self.assertEquals(talk.listeners.filter(id=user.id).count(), 1)
 
     def test_access_view_and_generate_talks(self):
         client = Client()
-        response = client.get('/gerar_grade/')
+        response = client.get('/gerar_clips/')
 
         self.assertEquals(response.status_code, 200)
-        self.assertEquals(response.content, "Grade gerada com sucesso!")
+        self.assertEquals(response.content, "clips gerada com sucesso!")
 
     def test_access_home_and_see_all_talks(self):
         # TODO: Use splinter to test browser access
