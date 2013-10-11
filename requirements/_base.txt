@@ -4,3 +4,4 @@ Unipath==1.0
 South==0.8.2
 git+git://github.com/kennethreitz/dj-static.git#egg=dj-static
 django-bower==4.7
+psycopg2==2.5.1
