@@ -11,9 +11,6 @@ urlpatterns = patterns('',
     # clips
     url(r'^', include('clips.urls', namespace='clips')),
 
-    # django twitter
-    url(r'^', include('twitterauth.urls', namespace='twitterauth')),
-
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
