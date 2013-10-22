@@ -5,8 +5,11 @@
 <div data-role="content">
   <a name="busca"></a>
   <form action="/busca/" method="get">
-    <input type="search" name="search" id="search-basic" value="" placeholder="Busca" />
-    <input type="submit" />
+    <div data-role="fieldcontain" class="ui-hide-label">
+      <label for="search-basic">Busca</label>
+      <input type="search" name="search" id="search-basic" value="" placeholder="Busca" />
+    </div>
+    <input type="submit" value="Enviar"/>
   </form>
   <ul data-role="listview" data-inset="true" data-dividertheme="e">
     <li data-role="list-divider">Programa&ccedil;&atilde;o</li>

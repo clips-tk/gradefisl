@@ -5,8 +5,11 @@
     <h2>Busca</h2>
     <a name="busca"></a>
     <form action="/busca/" method="get">
-      <input type="search" name="search" id="search-basic" value="" placeholder="Busque por tema ou palestrante"/>
-      <input type="submit" />
+      <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="search-basic">Busca</label>
+        <input type="search" name="search" id="search-basic" value="" placeholder="Busque por tema ou palestrante"/>
+      </div>
+      <input type="submit" value="Enviar" />
     </form>
     {% if query %}
       <p>Você buscou por <strong>{{ query }}</strong>.</p>
